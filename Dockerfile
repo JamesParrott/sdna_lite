@@ -11,10 +11,11 @@ RUN apt-get update -y && \
     libboost-dev \
     ca-certificates && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    cd /src && \
-    git clone https://github.com/JamesParrott/sdna_lite && \
-    mkdir build_geos && \
-    cd build_geos && \
+    rm -rf /var/lib/apt/lists/* 
+
+WORKDIR /tmp
+
+RUN mkdir -p /tmp/build_geos && \
+    cd /tmp/build_geos && \
     CXX=g++ cmake ../sdna_lite/sDNA/geos/drop && \
     make
