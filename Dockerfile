@@ -1,7 +1,18 @@
 ARG BASE_IMAGE=ubuntu
 ARG BASE_TAG=jammy
 
-FROM "${BASE_IMAGE}:${BASE_TAG}"
+ARG GEOS_SRC_DIR=/tmp/sdna_lite/sDNA/geos
+ARG BINARIES_DIR=/tmp/build_geos
+ARG ARCH=arm
+
+ARG INSTALL_DIR=/usr/bin/sdna_lite
+
+
+
+# Geos builder stage.  https://libgeos.org/usage/download/
+# sDNA has a statically linked copy of v 3.3.5 ( see sDNA/geos/drop/configure.in )
+
+FROM "${BASE_IMAGE}:${BASE_TAG}" as geos_builder
 
 RUN apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -14,9 +25,22 @@ RUN apt-get update -y && \
 
 WORKDIR /tmp
 
-COPY sDNA/geos/drop /tmp/sdna_lite/sDNA/geos/drop
+COPY sDNA/geos/drop ${GEOS_SRC_DIR}/${ARCH}
 
-RUN mkdir -p /tmp/build_geos && \
-    cd /tmp/build_geos && \
-    CXX=g++ cmake ../sdna_lite/sDNA/geos/drop && \
+RUN mkdir -p ${BINARIES_DIR} && \
+    cd ${BINARIES_DIR} && \
+    CXX=g++ cmake ${GEOS_SRC_DIR}/${ARCH} && \
     make
+
+
+
+# sdna_lite compilation stage
+
+FROM "${BASE_IMAGE}:${BASE_TAG}"
+
+WORKDIR ${INSTALL_DIR}
+
+COPY . ${INSTALL_DIR}
+
+COPY --from=geos_builder ${BINARIES_DIR}/${ARCH} ${INSTALL_DIR}/${ARCH}
+
