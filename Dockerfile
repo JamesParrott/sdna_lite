@@ -8,7 +8,7 @@ RUN apt-get update -y && \
     g++ \
     make \
     cmake \
-    libboost-dev \
+    libboost-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* 
 
