@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+Usage:  python3 gen_cmakelists.py > CMakeLists.txt
+
+"""
+
+
 import sys
 from pathlib import Path
 
@@ -17,5 +24,5 @@ def paths():
     
 
 
-print('SOURCES=\\')
-print(*[f'  {path}' for path in paths()],sep='  \\\n')
+print('set(SOURCES')
+print(*[f'  {path}\n' for path in paths()],sep='',end='  )')
