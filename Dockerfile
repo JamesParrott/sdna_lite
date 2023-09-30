@@ -69,7 +69,7 @@ COPY --from=geos_builder ${GEOS_BIN_DIR}/${ARCH} ${SDNA_SRC_DIR}/output/${ARCH}
 
 RUN mkdir -p ${SDNA_BIN_DIR}
 
-# RUN g++ -shared -o lib_sDNA_ubuntu.so -fPIC sDNA/**/*.cpp sDNA/**/*.h
+# RUN g++ -shared -o lib_sDNA_ubuntu.so -fPIC sDNA/**/*.cpp sDNA/**/*.h sDNA/**/*.hpp
 
 # && \
 #     cd ${SDNA_BIN_DIR} && \

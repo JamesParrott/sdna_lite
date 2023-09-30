@@ -29,6 +29,12 @@
 #define _SECURE_SCL 0 //disable iterator bounds checking for release builds
 #endif
 
+// #ifndef __cplusplus
+// # include <stddef.h> /* for size_t definition */
+// #else
+# include <cstddef>
+// using std::size_t;
+// #endif
 
 #include <vector>
 #include "IteratorTypeErasure\any_iterator\any_iterator.hpp"
