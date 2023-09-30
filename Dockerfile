@@ -27,7 +27,7 @@ RUN apt-get update -y && \
 FROM base_builder as geos_builder
 
 ARG GEOS_SRC_DIR=/tmp/sdna_lite/sDNA/geos
-ARG BINARIES_DIR=/tmp/build_geos
+ARG GEOS_BIN_DIR=/tmp/build_geos
 ARG ARCH=arm
 
 RUN apt-get update -y && \
@@ -43,8 +43,8 @@ WORKDIR /tmp
 
 COPY sDNA/geos/drop ${GEOS_SRC_DIR}/${ARCH}
 
-RUN mkdir -p "${BINARIES_DIR}" && \
-    cd ${BINARIES_DIR} && \
+RUN mkdir -p ${GEOS_BIN_DIR} && \
+    cd ${GEOS_BIN_DIR} && \
     CXX=g++ cmake ${GEOS_SRC_DIR}/${ARCH} && \
     make
 
@@ -54,20 +54,23 @@ RUN mkdir -p "${BINARIES_DIR}" && \
 
 FROM base_builder as sdna_lite_builder
 
+ARG GEOS_BIN_DIR
+
 ARG INSTALL_DIR=/usr/bin/sdna_lite
 
-# RUN apt-get update -y && \
-#     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-#     g++ \
-#     make \
-#     cmake \
-#     libboost-dev && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* 
+ARG SDNA_SRC_DIR=/tmp/sdna_lite/
+ARG SDNA_BIN_DIR=/tmp/build_sdna
 
-WORKDIR ${INSTALL_DIR}
 
-COPY . ${INSTALL_DIR}
+WORKDIR ${SDNA_SRC_DIR}
 
-COPY --from=geos_builder ${BINARIES_DIR}/${ARCH} ${INSTALL_DIR}/${ARCH}
+COPY . ${SDNA_SRC_DIR}
 
+COPY --from=geos_builder ${GEOS_BIN_DIR}/${ARCH} ${SDNA_SRC_DIR}/output/${ARCH}
+
+RUN mkdir -p ${SDNA_BIN_DIR}
+
+# && \
+#     cd ${SDNA_BIN_DIR} && \
+#     CXX=g++ cmake ${GEOS_SRC_DIR}/${ARCH} && \
+#     make
