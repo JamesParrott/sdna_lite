@@ -69,7 +69,7 @@ COPY --from=geos_builder ${GEOS_BIN_DIR}/${ARCH} ${SDNA_SRC_DIR}/output/${ARCH}
 
 RUN mkdir -p ${SDNA_BIN_DIR}
 
-# RUN g++ -shared -o lib_sDNA_ubuntu.so -fPIC sDNA/**/*.cpp sDNA/**/*.h sDNA/**/*.hpp
+# RUN g++ -shared -o lib_sDNA_ubuntu.so -fPIC sDNA/**/*.cpp sDNA/**/*.h sDNA/sdna_vs2008/IteratorTypeErasure/any_iterator/any_iterator.hpp
 
 # && \
 #     cd ${SDNA_BIN_DIR} && \
