@@ -69,9 +69,7 @@ COPY --from=geos_builder ${GEOS_BIN_DIR}/${ARCH} ${SDNA_SRC_DIR}/output/${ARCH}
 
 RUN mkdir -p ${SDNA_BIN_DIR}
 
+# Warning!  This does a lot of stuff, takes a very long time, and produces 
+# a lot of errors, but appears to try to build the project. 
 # RUN g++ -shared -o lib_sDNA_ubuntu.so -fPIC sDNA/sdna_vs2008/*.cpp sDNA/sdna_vs2008/*.h sDNA/sdna_vs2008/IteratorTypeErasure/any_iterator/any_iterator.hpp sDNA/muparser/drop/src/*.cpp  sDNA/muparser/drop/include/*.h
 
-# && \
-#     cd ${SDNA_BIN_DIR} && \
-#     CXX=g++ cmake ${GEOS_SRC_DIR}/${ARCH} && \
-#     make
