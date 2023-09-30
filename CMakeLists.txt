@@ -102,6 +102,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 # Add a shared library target
-add_library(MySharedLib SHARED ${SOURCES} ${HEADERS})
+add_library(sdna_ubuntu SHARED ${SOURCES} ${HEADERS})
 
 
