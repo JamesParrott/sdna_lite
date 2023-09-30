@@ -4,7 +4,7 @@ ARG GEOS_SRC_DIR=/tmp/sdna_lite/sDNA/geos
 ARG GEOS_BIN_DIR=/tmp/build_geos
 ARG ARCH=arm
 
-ARG SDNA_SRC_DIR=/tmp/sdna_lite/
+ARG SDNA_SRC_DIR=/tmp/sdna_lite
 ARG SDNA_BIN_DIR=/tmp/build_sdna
 
 ARG INSTALL_DIR=/usr/bin/sdna_lite
@@ -38,13 +38,11 @@ ARG GEOS_SRC_DIR
 ARG GEOS_BIN_DIR
 ARG ARCH
 
-WORKDIR /tmp
+WORKDIR ${GEOS_BIN_DIR}/${ARCH}
 
 COPY sDNA/geos/drop ${GEOS_SRC_DIR}/${ARCH}
 
-RUN mkdir -p ${GEOS_BIN_DIR} && \
-    cd ${GEOS_BIN_DIR} && \
-    CXX=g++ cmake ${GEOS_SRC_DIR}/${ARCH} && \
+RUN CXX=g++ cmake ${GEOS_SRC_DIR}/${ARCH} && \
     make
 
 
