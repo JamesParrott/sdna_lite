@@ -63,6 +63,7 @@ WORKDIR ${SDNA_SRC_DIR}
 COPY . ${SDNA_SRC_DIR}
 
 RUN rm -rf ${SDNA_SRC_DIR}/sDNA/geos
+RUN rm -rf ${SDNA_SRC_DIR}/sDNA/sdnacomwrapper
 
 COPY --from=geos_builder ${GEOS_BIN_DIR}/${ARCH} ${SDNA_SRC_DIR}/output/${ARCH}
 

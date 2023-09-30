@@ -21,9 +21,6 @@
 
 #pragma once
 
-#include "targetver.h"
-
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 
 #define _SCL_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
@@ -32,11 +29,6 @@
 #define _SECURE_SCL 0 //disable iterator bounds checking for release builds
 #endif
 
-// Windows Header Files:
-#define NOMINMAX
-#include <windows.h>
-#include <wininet.h>
-#include <stdlib.h>
 
 #include <vector>
 #include "IteratorTypeErasure\any_iterator\any_iterator.hpp"
@@ -107,9 +99,6 @@ typedef boost::geometry::model::linestring<point_xyz > BoostLineString3d;
 #define OMP_NUM_THREADS 1
 #endif
 
-#ifdef _MSC_VER // msvc compiler
-#include <omp.h>
-#endif
 
 // The following ifdef block is the standard way of creating macros which make exporting 
 // from a DLL simpler. All files within this DLL are compiled with the SDNA_EXPORTS
