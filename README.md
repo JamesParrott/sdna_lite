@@ -2,12 +2,12 @@
 
 Status: pre-alpha.  Not functional, incomplete.  Mightily hacked.  Untested.
 
-Crazy .so:  
+Crazy 45MB .so:  https://github.com/JamesParrott/sdna_lite/releases/download/v0.0.0-untested-pre-pre-pre-alpha-arm-ubuntu-jammy/lib_sDNA_ubuntu.so
 
 
 ## Current progress:
  - Compiles Geos in Ubuntu 22.04, on aarch64 (ARM)
- - Compiles 
+ - Compiles lib_sDNA_ubuntu.so in a Docker container, for ARM, using gcc.
 
 ## Changes:
  - No autocad dir
