@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.12)
 
 project(sdna_lite)
@@ -44,8 +45,63 @@ set(SOURCES=
   sDNA/sdna_vs2008/IteratorTypeErasure/documentation/any_iterator_demo.cpp
   )
 
+set(HEADERS=
+  sDNA/muparser/drop/include/muParser.h
+  sDNA/muparser/drop/include/muParserBase.h
+  sDNA/muparser/drop/include/muParserBytecode.h
+  sDNA/muparser/drop/include/muParserCallback.h
+  sDNA/muparser/drop/include/muParserDef.h
+  sDNA/muparser/drop/include/muParserDLL.h
+  sDNA/muparser/drop/include/muParserError.h
+  sDNA/muparser/drop/include/muParserFixes.h
+  sDNA/muparser/drop/include/muParserInt.h
+  sDNA/muparser/drop/include/muParserStack.h
+  sDNA/muparser/drop/include/muParserTemplateMagic.h
+  sDNA/muparser/drop/include/muParserTest.h
+  sDNA/muparser/drop/include/muParserToken.h
+  sDNA/muparser/drop/include/muParserTokenReader.h
+  sDNA/sdnacomwrapper/Calculation.h
+  sDNA/sdnacomwrapper/DispatchPtr.h
+  sDNA/sdnacomwrapper/dllmain.h
+  sDNA/sdnacomwrapper/globalwindow.h
+  sDNA/sdnacomwrapper/resource.h
+  sDNA/sdnacomwrapper/SDNAWindow.h
+  sDNA/sdnacomwrapper/SpatialNet.h
+  sDNA/sdnacomwrapper/stdafx.h
+  sDNA/sdnacomwrapper/targetver.h
+  sDNA/sdnacomwrapper/utils.h
+  sDNA/sdna_vs2008/calculation.h
+  sDNA/sdna_vs2008/calculationbase.h
+  sDNA/sdna_vs2008/config_string_parser.h
+  sDNA/sdna_vs2008/dataacquisitionstrategy.h
+  sDNA/sdna_vs2008/dummy_doxygen_containers.h
+  sDNA/sdna_vs2008/edge.h
+  sDNA/sdna_vs2008/geos_sdna_wrapper.h
+  sDNA/sdna_vs2008/linkdatasource.h
+  sDNA/sdna_vs2008/metricevaluator.h
+  sDNA/sdna_vs2008/net.h
+  sDNA/sdna_vs2008/point.h
+  sDNA/sdna_vs2008/prepareoperations.h
+  sDNA/sdna_vs2008/random.h
+  sDNA/sdna_vs2008/sdna.h
+  sDNA/sdna_vs2008/sDNACalculationFactory.h
+  sDNA/sdna_vs2008/sdna_arrays.h
+  sDNA/sdna_vs2008/sdna_geometry_collections.h
+  sDNA/sdna_vs2008/sdna_output_utils.h
+  sDNA/sdna_vs2008/sdna_spatial_accumulators.h
+  sDNA/sdna_vs2008/stdafx.h
+  sDNA/sdna_vs2008/tables.h
+  sDNA/sdna_vs2008/targetver.h
+  sDNA/sdna_vs2008/unique_id.h
+  sDNA/sdna_vs2008/version_template.h
+  )
 
 # Setup output directories.
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+
+# Add a shared library target
+add_library(MySharedLib SHARED ${SOURCES} ${HEADERS})
+
+
