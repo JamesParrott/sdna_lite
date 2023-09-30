@@ -1,5 +1,13 @@
 ARG BASE_IMAGE=ubuntu
 ARG BASE_TAG=jammy
+ARG GEOS_SRC_DIR=/tmp/sdna_lite/sDNA/geos
+ARG GEOS_BIN_DIR=/tmp/build_geos
+ARG ARCH=arm
+
+ARG SDNA_SRC_DIR=/tmp/sdna_lite/
+ARG SDNA_BIN_DIR=/tmp/build_sdna
+
+ARG INSTALL_DIR=/usr/bin/sdna_lite
 
 FROM "${BASE_IMAGE}:${BASE_TAG}" as base_builder
 
@@ -26,18 +34,9 @@ RUN apt-get update -y && \
 
 FROM base_builder as geos_builder
 
-ARG GEOS_SRC_DIR=/tmp/sdna_lite/sDNA/geos
-ARG GEOS_BIN_DIR=/tmp/build_geos
-ARG ARCH=arm
-
-RUN apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    g++ \
-    make \
-    cmake \
-    libboost-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* 
+ARG GEOS_SRC_DIR
+ARG GEOS_BIN_DIR
+ARG ARCH
 
 WORKDIR /tmp
 
@@ -56,11 +55,9 @@ FROM base_builder as sdna_lite_builder
 
 ARG GEOS_BIN_DIR
 ARG ARCH
-
-ARG INSTALL_DIR=/usr/bin/sdna_lite
-
-ARG SDNA_SRC_DIR=/tmp/sdna_lite/
-ARG SDNA_BIN_DIR=/tmp/build_sdna
+ARG INSTALL_DIR
+ARG SDNA_SRC_DIR
+ARG SDNA_BIN_DIR
 
 
 WORKDIR ${SDNA_SRC_DIR}
