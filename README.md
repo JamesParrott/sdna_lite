@@ -1,9 +1,13 @@
 # sDNA_lite: A light(er) fork of sdna_open, Spatial Design Network Analysis
 
-Status: pre-alpha.  Not functional, incomplete.
+Status: pre-alpha.  Not functional, incomplete.  Mightily hacked.  Untested.
+
+Crazy .so:  
+
 
 ## Current progress:
  - Compiles Geos in Ubuntu 22.04, on aarch64 (ARM)
+ - Compiles 
 
 ## Changes:
  - No autocad dir

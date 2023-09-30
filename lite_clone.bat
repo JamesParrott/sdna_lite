@@ -1,1 +1,0 @@
-git clone --depth=1 --branch lite https://github.com/JamesParrott/sdna_open
