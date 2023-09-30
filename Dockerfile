@@ -55,6 +55,7 @@ RUN mkdir -p ${GEOS_BIN_DIR} && \
 FROM base_builder as sdna_lite_builder
 
 ARG GEOS_BIN_DIR
+ARG ARCH
 
 ARG INSTALL_DIR=/usr/bin/sdna_lite
 
