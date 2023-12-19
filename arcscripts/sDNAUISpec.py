@@ -25,7 +25,9 @@
 ##THE SOFTWARE.
 
 def metric_dropdown(name,label,include_match_analytical=False):
-    optlist = ["EUCLIDEAN","ANGULAR","CUSTOM","CYCLE","CYCLE_ROUNDTRIP","EUCLIDEAN_ANGULAR"]
+    optlist = ["EUCLIDEAN","ANGULAR","HYBRID","CUSTOM","CYCLE","CYCLE_ROUNDTRIP","PEDESTRIAN","VEHICLE","PUBLIC_TRANSPORT","EUCLIDEAN_ANGULAR"]
+    if include_match_analytical:
+        optlist.insert(1,"MATCH_ANALYTICAL")
     return (name,label,"Text",optlist,optlist[0],True)
 
 # when this changes, add it to geodesics etc
@@ -38,15 +40,16 @@ def weighting_config(args):
     return "origweight=%(origweight)s;destweight=%(destweight)s;weight_type=%(weighting)s"%args
     
 def radius_options(include_banded = True,include_cont = True):
-    retval = [("radii","Radii (in units of source data projection)","Text",None,"n",True)]
+    retval = [("radii","Radii (in units of radial metric or source data projection)","Text",None,"n",True)]
     if include_banded:
         retval += [("bandedradii","Banded radius","Bool",None,False,False)]
     if include_cont:
         retval += [("cont","Continuous Space","Bool",None,False,False)]
+    retval += [metric_dropdown("radmet","Radial metric",True)]
     return retval
             
 def radius_config(args):
-    retval = ";radii=%(radii)s;"%args
+    retval = ";radii=%(radii)s;radmetric=%(radmet)s;"%args
     if "bandedradii" in args and args["bandedradii"]:
         retval += "bandedradii;"
     if "cont" in args and args["cont"]:
@@ -373,7 +376,6 @@ class sDNAPrepare(object):
                   ("preserve_absolute","Absolute data to preserve (numeric field names separated by commas)","Text",None,"",False),
                   ("preserve_unitlength","Unit length data to preserve (numeric field names separated by commas)","Text",None,"",False),
                   ("preserve_text","Text data to preserve (text field names separated by commas)","Text",None,"",False),
-                  ("merge_if_identical","Do not merge split links if not identical (field names separated by commas)","Text",None,"",False),
                   ("xytol","Custom XY Tolerance","Text",None,"",False),
                   ("ztol","Custom Z Tolerance","Text",None,"",False)
                   ]
@@ -391,7 +393,7 @@ class sDNAPrepare(object):
                            "action=%(action)s;"\
                            "%(boolstring)s;"\
                            "island=%(tifield)s;"\
-                           "data_absolute=%(preserve_absolute)s;data_unitlength=%(preserve_unitlength)s;data_text=%(preserve_text)s;merge_if_identical=%(merge_if_identical)s"\
+                           "data_absolute=%(preserve_absolute)s;data_unitlength=%(preserve_unitlength)s;data_text=%(preserve_text)s"\
                            %args
         syntax["config"] = quote(syntax["config"])
         return syntax

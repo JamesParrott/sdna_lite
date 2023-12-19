@@ -1,19 +1,3 @@
-//sDNA software for spatial network analysis 
-//Copyright (C) 2011-2019 Cardiff University
-
-//This program is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//(at your option) any later version.
-
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
-//You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 #include "stdafx.h"
 #include "calculation.h"
 #include "prepareoperations.h"
@@ -148,7 +132,7 @@ bool SDNAIntegralCalculation::run_internal()
 
 void SDNAIntegralCalculation::initialize_zones()
 {
-	BOOST_FOREACH(shared_ptr<Table<float>> zdt, zonedatatables)
+	BOOST_FOREACH(boost::shared_ptr<Table<float>> zdt, zonedatatables)
 	{
 		zdt->finalize();
 		zdt->initializeItems(net->num_items());
@@ -176,7 +160,7 @@ void SDNAIntegralCalculation::initialize_zones()
 
 	BOOST_FOREACH(ZoneSum& zd, zone_sum_evaluators)
 	{
-		shared_ptr<Table<long double> > zone_sum_table = zd.table;
+		boost::shared_ptr<Table<long double> > zone_sum_table = zd.table;
 		zone_sum_table->setNameDas(zd.zone_das);
 
 		for (SDNAPolylineContainer::iterator it = net->link_container.begin(); it != net->link_container.end(); it++)
@@ -368,9 +352,10 @@ bool SDNAIntegralCalculation::run_internal_throwing_exceptions()
 	//so we can provide a different instance to each thread in omp parallel for
 	//(so while this isn't strictly a factory pattern, we are using copy constructor as a factory method)
 	MetricEvaluatorCopyableWrapper analysis_evaluator_copyable(analysis_evaluator_factory);
-	
+	MetricEvaluatorCopyableWrapper radial_evaluator_copyable(radial_evaluator_factory);
+
 	bool terminate_early = false;
-	shared_ptr<SDNARuntimeException> inner_loop_exception;
+	boost::shared_ptr<SDNARuntimeException> inner_loop_exception;
 
 	//omp parallel loop.  different threads should stay clear of one another, because they only update
 	//arrays for their own origin link, which is different in each case
@@ -383,7 +368,7 @@ bool SDNAIntegralCalculation::run_internal_throwing_exceptions()
 		SetThreadPriority(GetCurrentThread(), THREAD_MODE_BACKGROUND_BEGIN);
 		SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_BELOW_NORMAL);
 
-		#pragma omp for schedule (guided) firstprivate (analysis_evaluator_copyable)
+		#pragma omp for schedule (guided) firstprivate (analysis_evaluator_copyable, radial_evaluator_copyable)
 		for (long origin_link_index = skip_mod; origin_link_index < numeric_cast<long>(links.size()); origin_link_index+=skip_fraction)
 		{
 			//mechanism to stop exceptions breaking through parallel for, which isn't allowed by Open MP
@@ -392,8 +377,8 @@ bool SDNAIntegralCalculation::run_internal_throwing_exceptions()
 				try
 				{
 					scoped_ptr<MetricEvaluator>& analysis_evaluator = analysis_evaluator_copyable.get();
-					scoped_ptr<MetricEvaluator> eme(new EuclideanMetricEvaluator());
-					sdna_inner_loop(origin_link_index,links,thread_safe_progress_bar,&*eme,&*analysis_evaluator,predicted_max_geodesic_steps);
+					scoped_ptr<MetricEvaluator>& radial_evaluator = radial_evaluator_copyable.get();
+					sdna_inner_loop(origin_link_index,links,thread_safe_progress_bar,&*radial_evaluator,&*analysis_evaluator,predicted_max_geodesic_steps);
 				}
 				catch (SDNARuntimeException &e)
 				{
@@ -423,7 +408,7 @@ bool SDNAIntegralCalculation::run_internal_throwing_exceptions()
 				const long double sumdist = skim_matrix_sum_distance[skim_orig][skim_dest];
 				const long double weight = skim_matrix_weight[skim_orig][skim_dest];
 				const size_t N = skim_matrix_n[skim_orig][skim_dest];
-				shared_ptr<sDNADataMultiGeometry> skimdata(
+				boost::shared_ptr<sDNADataMultiGeometry> skimdata(
 					new sDNADataMultiGeometry(
 						NO_GEOM,
 						get_skim_data(skim_origins.index_to_zone(skim_orig),
@@ -489,7 +474,7 @@ void SDNAIntegralCalculation::sdna_inner_loop(long origin_link_index,
 			destinations.reserve(destinationsegments.size());
 			
 			//initialize geometry store for convex hull and netradius
-			shared_ptr<sDNADataMultiGeometry> all_edge_segments_in_radius = shared_ptr<sDNADataMultiGeometry>(
+			boost::shared_ptr<sDNADataMultiGeometry> all_edge_segments_in_radius = boost::shared_ptr<sDNADataMultiGeometry>(
 				new sDNADataMultiGeometry(MULTIPOLYLINEZ,get_hull_or_netradius_data(origin->arcid,radii[r],origweightdata.get_data(*origin)),destinationsegments.size()));
 
 			//must be stored here as needed by process_origin and process_destination;
@@ -520,7 +505,7 @@ void SDNAIntegralCalculation::sdna_inner_loop(long origin_link_index,
 	} // end oversample loop
 }
 
-void SDNAIntegralCalculation::process_origin(SDNAPolyline *origin,int r,shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,MetricEvaluator *analysis_evaluator,double& total_weight_this_origin_sample_radius)
+void SDNAIntegralCalculation::process_origin(SDNAPolyline *origin,int r,boost::shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,MetricEvaluator *analysis_evaluator,double& total_weight_this_origin_sample_radius)
 {
 	//the origin link is handled separately, because it is traversed starting in the middle, not at one end
 
@@ -539,7 +524,7 @@ void SDNAIntegralCalculation::process_origin(SDNAPolyline *origin,int r,shared_p
 	const float origin_effective_radius = origin_cont_space?static_cast<float>(radii[r]):numeric_limits<float>::infinity();
 			
 	float length_of_origin_within_radius, cost_of_origin_within_radius;
-	shared_ptr<sDNAGeometryPointsByEdgeLength> origin_geom(new sDNAGeometryPointsByEdgeLength());
+	boost::shared_ptr<sDNAGeometryPointsByEdgeLength> origin_geom(new sDNAGeometryPointsByEdgeLength());
 	
 	const TraversalEventAccumulator origin_fwd_cost = origin->forward_edge.partial_cost_from_middle_ignoring_oneway(origin_effective_radius);
 	const TraversalEventAccumulator origin_bwd_cost = origin->backward_edge.partial_cost_from_middle_ignoring_oneway(origin_effective_radius);
@@ -625,7 +610,7 @@ void SDNAIntegralCalculation::process_origin(SDNAPolyline *origin,int r,shared_p
 		two_stage_dest_popularity.increment(origin,r,two_stage_betweenness_origin_weight);
 		if (output_destinations)
 		{
-			shared_ptr<sDNADataMultiGeometry> orig_as_destinationdata(
+			boost::shared_ptr<sDNADataMultiGeometry> orig_as_destinationdata(
 				new sDNADataMultiGeometry(
 					POLYLINEZ,
 					get_destination_data(origin->arcid,origin->arcid,radii[r],
@@ -635,7 +620,7 @@ void SDNAIntegralCalculation::process_origin(SDNAPolyline *origin,int r,shared_p
 										 (float)(length_of_origin_within_radius / 3.),
 										 (float)origin_crow_flight),
 					 1));
-			shared_ptr<sDNAGeometryPointsByEdgeLength> origasdestination(new sDNAGeometryPointsByEdgeLength());
+			boost::shared_ptr<sDNAGeometryPointsByEdgeLength> origasdestination(new sDNAGeometryPointsByEdgeLength());
 			orig_as_destinationdata->add_part(origin_geom);
 			destinationgeoms.add(orig_as_destinationdata);
 		}
@@ -650,7 +635,7 @@ double SDNAIntegralCalculation::get_geodesic_analytical_cost(DestinationEdgeProc
 void SDNAIntegralCalculation::process_destination(DestinationEdgeProcessingTask &dest,SDNAPolyline *origin_link, 
 											  int r,
 											  IdIndexedArray<double  ,EdgeId> &anal_best_costs_reaching_edge,
-											  shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,
+											  boost::shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,
 											  double& total_weight_this_origin_sample_radius)
 {
 	const float length_of_edge_inside_radius = dest.length_of_edge_inside_radius;
@@ -688,7 +673,7 @@ void SDNAIntegralCalculation::process_destination(DestinationEdgeProcessingTask 
 			" radius " << radius << endl;
 	#endif
 	
-	shared_ptr<sDNAGeometryPointsByEdgeLength> g(new sDNAGeometryPointsByEdgeLength());
+	boost::shared_ptr<sDNAGeometryPointsByEdgeLength> g(new sDNAGeometryPointsByEdgeLength());
 	g->add_edge_length_from_start_to_end(dest.geom_edge,length_of_edge_inside_radius);
 	all_edge_segments_in_radius->add_part(g);
 
@@ -819,7 +804,7 @@ void SDNAIntegralCalculation::process_geodesic(DestinationEdgeProcessingTask &de
 	#endif
 	if (output_geodesics)
 	{
-		shared_ptr<sDNADataMultiGeometry> geodesicdata(
+		boost::shared_ptr<sDNADataMultiGeometry> geodesicdata(
 			new sDNADataMultiGeometry(
 				POLYLINEZ,
 				get_geodesic_data(origin_link->arcid,destination_link->arcid,(float)radii[r],
@@ -828,7 +813,7 @@ void SDNAIntegralCalculation::process_geodesic(DestinationEdgeProcessingTask &de
 								  (float)get_geodesic_analytical_cost(dest,anal_best_costs_reaching_edge),
 								  (float)euclidean_cost_of_geodesic),
 				1));
-		shared_ptr<sDNAGeometryPointsByEdgeLength> geodesic(new sDNAGeometryPointsByEdgeLength());
+		boost::shared_ptr<sDNAGeometryPointsByEdgeLength> geodesic(new sDNAGeometryPointsByEdgeLength());
 		assert(destination_link != origin_link);
 		geodesic->add_edge_length_from_middle_to_end(origin_exit_edge,numeric_limits<float>::infinity());
 		for (vector<Edge*>::reverse_iterator it=intermediate_edges.rbegin();it!=intermediate_edges.rend();it++)
@@ -842,7 +827,7 @@ void SDNAIntegralCalculation::process_geodesic(DestinationEdgeProcessingTask &de
 		//this could go in process_destination, which would make output of destinations run faster
 		//but only if we ditched two_stage_betweenness_weight and euclidean_cost_of_geodesic
 		//so for the time being, here it stays
-		shared_ptr<sDNADataMultiGeometry> destinationdata(
+		boost::shared_ptr<sDNADataMultiGeometry> destinationdata(
 			new sDNADataMultiGeometry(
 				POLYLINEZ,
 				get_destination_data(origin_link->arcid,destination_link->arcid,radii[r],
@@ -852,7 +837,7 @@ void SDNAIntegralCalculation::process_geodesic(DestinationEdgeProcessingTask &de
 									 (float)euclidean_cost_of_geodesic,
 									 (float)crow_flies_distance),
 				 1));
-		shared_ptr<sDNAGeometryPointsByEdgeLength> destination(new sDNAGeometryPointsByEdgeLength());
+		boost::shared_ptr<sDNAGeometryPointsByEdgeLength> destination(new sDNAGeometryPointsByEdgeLength());
 		destination->add_edge_length_from_start_to_end(dest.routing_edge,dest.length_of_edge_inside_radius);
 		destinationdata->add_part(destination);
 		destinationgeoms.add(destinationdata);
@@ -939,7 +924,7 @@ void PartialNet::count_junctions_accumulate(long &num_junctions, float &connecti
 	}
 }
 
-void SDNAIntegralCalculation::finalize_radius_geometry(SDNAPolyline *origin,int r,shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius)
+void SDNAIntegralCalculation::finalize_radius_geometry(SDNAPolyline *origin,int r,boost::shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius)
 {
 	if (run_convex_hull)
 	{
@@ -983,10 +968,10 @@ void SDNAIntegralCalculation::finalize_radius_geometry(SDNAPolyline *origin,int 
 		//save geometries if needed
 		if (output_hulls)
 		{
-			shared_ptr<sDNADataMultiGeometry> saved_hull_with_data(
+			boost::shared_ptr<sDNADataMultiGeometry> saved_hull_with_data(
 				new sDNADataMultiGeometry(POLYGON,get_hull_or_netradius_data(origin->arcid,radii[r],origweightdata.get_data(*origin)),1)
 			);
-			shared_ptr<sDNAGeometry> saved_hull(new sDNAGeometryPointsByValue(convex_hull));
+			boost::shared_ptr<sDNAGeometry> saved_hull(new sDNAGeometryPointsByValue(convex_hull));
 			saved_hull_with_data->add_part(saved_hull);
 			hulls.add(saved_hull_with_data);
 		}
@@ -1028,6 +1013,24 @@ MetricEvaluator* SDNAIntegralCalculation::create_metric_from_config(ConfigString
 		customcostdata = NetExpectedDataSource<float>(config.get_string(custom_cost_field),1,net,"",print_warning_callback);
 		add_expected_data(&customcostdata);
 		return new CustomMetricEvaluator(&customcostdata);
+	}
+	else if (out_measure=="hybrid")
+	{
+		HybridMetricEvaluator *hme = new HybridMetricEvaluator(config.get_string(hybrid_line_expr_field),config.get_string(hybrid_junc_expr_field),net,this);
+		if (!hme->test_linearity())
+		{
+			if (!config.get_bool("ignorenonlinear"))
+			{
+				print_warning_callback("ERROR: link metric formula does not look linear in ang, euc, hg and hl");
+				print_warning_callback("Unless you really know what you are doing this can lead to meaningless results");
+				print_warning_callback("(Note that use of random functions can cause a false positive for this warning)");
+				print_warning_callback("(Use keyword 'ignorenonlinear' to force sDNA to continue regardless)");
+				throw BadConfigException("Nonlinear link metric formula");
+			}
+			else
+				print_warning_callback("WARNING: ignorenonlinear is in use, and the link formula doesn't look linear.");
+		}
+		return hme;
 	}
 	else if (out_measure=="cycle")
 	{
@@ -1078,11 +1081,72 @@ MetricEvaluator* SDNAIntegralCalculation::create_metric_from_config(ConfigString
 		HybridMetricEvaluator *hme = new HybridMetricEvaluator(lf.str(),jf.str(),net,this);
 		return hme;
 	}
+	else if (out_measure=="pedestrian")
+	{
+		string a=config.get_string("a");
+		if (a=="default") a="0.5";
+		string linerand = config.get_string("linerand");
+		string juncrand = config.get_string("juncrand");
+		stringstream ss1; ss1<<"Pedestrian metric parameters: a="<<a<<" linerand="<<linerand<<" juncrand="<<juncrand;
+		print_warning_callback(ss1.str().c_str());
+		stringstream ilf, ijf, lf, jf;
+		ilf << "euc*(1-"<<a<<")+ang*" << a;
+		if (linerand=="0")
+			lf << ilf.str();
+		else
+			lf << "trunc(randnorm(1,"<<linerand<<"),0.1,10)*("<< ilf.str() <<")";
+		ijf << a << "*ang";
+		if (juncrand=="0")
+			jf << ijf.str();
+		else
+			jf << "trunc(randnorm(1,"<<juncrand<<"),0.1,10)*("<< ijf.str() <<")";
+		stringstream ss2; ss2<<"Equivalent hybrid metric: lineformula="<<lf.str()<<";juncformula="<<jf.str();
+		print_warning_callback(ss2.str().c_str());
+		HybridMetricEvaluator *hme = new HybridMetricEvaluator(lf.str(),jf.str(),net,this);
+		return hme;
+	}
+	else if (out_measure=="vehicle")
+	{
+		string a=config.get_string("a");
+		string jp=config.get_string("jp");
+		if (a=="default") a="1";
+		if (jp=="default") jp="0";
+		stringstream ss1; ss1<<"Vehicle metric parameters: a="<<a<<" , jp="<<jp;
+		print_warning_callback(ss1.str().c_str());
+		stringstream lf, jf;
+		lf << "euc+" << a << "*ang";
+		jf << a << "*ang+" << jp;
+		stringstream ss2; ss2<<"Equivalent hybrid metric: lineformula="<<lf.str()<<";juncformula="<<jf.str();
+		print_warning_callback(ss2.str().c_str());
+		HybridMetricEvaluator *hme = new HybridMetricEvaluator(lf.str(),jf.str(),net,this);
+		return hme;
+	}
 	else if (out_measure=="euclidean_angular")
 	{
 		stringstream lf, jf;
 		lf << "euc+ang";
 		jf << "ang";
+		stringstream ss2; ss2<<"Equivalent hybrid metric: lineformula="<<lf.str()<<";juncformula="<<jf.str();
+		print_warning_callback(ss2.str().c_str());
+		HybridMetricEvaluator *hme = new HybridMetricEvaluator(lf.str(),jf.str(),net,this);
+		return hme;
+	}
+	else if (out_measure=="public_transport")
+	{
+		string linefield=config.get_string("linefield");
+		stringstream ss; ss << "Using field "<<linefield<<" for public transport line number";
+		print_warning_callback(ss.str().c_str());
+		string c=config.get_string("c");
+		string s=config.get_string("s");
+		string e=config.get_string("e");
+		if (c=="default") c="3";
+		if (e=="default") e="0.001";
+		if (s=="default") s="1";
+		stringstream ss1; ss1<<"PT metric parameters: change penalty c="<<c<<", distance penalty e="<<e<<", stop penalty s="<<s<<endl;
+		print_warning_callback(ss1.str().c_str());
+		stringstream lf, jf;
+		lf << e << "*euc + "<<s<<"*euc/FULLeuc";
+		jf << "(PREV"<<linefield<<"==NEXT"<<linefield<<")?0:"<<c;
 		stringstream ss2; ss2<<"Equivalent hybrid metric: lineformula="<<lf.str()<<";juncformula="<<jf.str();
 		print_warning_callback(ss2.str().c_str());
 		HybridMetricEvaluator *hme = new HybridMetricEvaluator(lf.str(),jf.str(),net,this);

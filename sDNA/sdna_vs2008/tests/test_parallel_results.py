@@ -90,7 +90,7 @@ def test_net(dll,net_definition,euclidean_radii,cont_space,prob_link):
     net = dll.net_create()
     
     config_string = "radii=%s;"%",".join(map(str,euclidean_radii))
-    config_string += "metric=euclidean_angular;outputskim;skimzone=zone;"
+    config_string += "metric=hybrid;lineformula=_a=ang*arcid,_a;juncformula=_a=PREVarcid+NEXTarcid,_a;outputskim;skimzone=zone;"
     config_string += "cont=%s;"%cont_space
     
     dll.integral_calc_create.restype = my_void_p

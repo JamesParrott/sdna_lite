@@ -1,19 +1,3 @@
-//sDNA software for spatial network analysis 
-//Copyright (C) 2011-2019 Cardiff University
-
-//This program is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//(at your option) any later version.
-
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
-//You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 #include "stdafx.h"
 #include "calculationbase.h"
 #include "sdna_output_utils.h"
@@ -155,6 +139,7 @@ private:
 	
 	//not strictly a factory (as in factory method) but have to use it as such by copying it to each thread
 	//hence it's a kind of blueprint
+	scoped_ptr<MetricEvaluator> radial_evaluator_factory;
 	scoped_ptr<MetricEvaluator> analysis_evaluator_factory;
 	scoped_ptr<HybridMetricEvaluator> zonedist_evaluator_factory;
 	
@@ -191,7 +176,7 @@ private:
 	void process_destination(DestinationEdgeProcessingTask &dest,SDNAPolyline *origin_link, 
 											  int r,
 											  IdIndexedArray<double  ,EdgeId> &anal_best_costs_reaching_edge,
-											  shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,
+											  boost::shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,
 											  double& total_weight_this_origin_sample_radius);
 	void process_geodesic(DestinationEdgeProcessingTask &dest,PartialNet &cut_net, int r,
 											  vector<Edge*> &intermediate_edges,
@@ -201,9 +186,9 @@ private:
 	double backtrace(DestinationEdgeProcessingTask &t,SDNAPolyline * origin_link,
 										  IdIndexedArray<Edge *  ,EdgeId> &anal_backlinks_edge,
 										  vector<Edge*> &intermediate_edges,Edge **origin_exit_edge,bool &passed_intermediate_filter);
-	void process_origin(SDNAPolyline *origin,int r,shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,
+	void process_origin(SDNAPolyline *origin,int r,boost::shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius,
 										MetricEvaluator *analysis_evaluator,double& total_weight_this_origin_sample_radius);
-	void finalize_radius_geometry(SDNAPolyline *origin,int r,shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius);
+	void finalize_radius_geometry(SDNAPolyline *origin,int r,boost::shared_ptr<sDNADataMultiGeometry> &all_edge_segments_in_radius);
 	static double get_geodesic_analytical_cost(DestinationEdgeProcessingTask &dest,IdIndexedArray<double  ,EdgeId> &anal_best_costs_reaching_edge);
 
 	MetricEvaluator* create_metric_from_config(ConfigStringParser &config,string metric_field,string hybrid_line_expr_field,string hybrid_junc_expr_field,string custom_cost_field);
@@ -233,7 +218,7 @@ private:
 
 	NetExpectedDataSource<float> customcostdata, skiporiginifzerodata, onewaydata, vertonewaydata;
 	LengthWeightingStrategy origweightsource, destweightsource;
-	shared_ptr<HybridMetricEvaluator> origweightexpr, destweightexpr;
+	boost::shared_ptr<HybridMetricEvaluator> origweightexpr, destweightexpr;
 
 	SDNAPolylineDataSourceGeometryCollectionWrapper netdata;
 	sDNAGeometryCollection geodesics,hulls,netradii,destinationgeoms,skim_geom;
@@ -253,9 +238,8 @@ private:
 								  "arcxytol;arcztol;xytol;ztol;skipzeroweightorigins;skipzeroweightdestinations;skipfraction;skipmod;outputsums;outputdecomposableonly;skiporiginifzero;"
 								  "probroutes;probroutethreshold;probrouteaction;nostrictnetworkcut;weight;custommetric;weight_type;origweight;destweight;"
 								  "outputgeodesics;outputhulls;outputnetradii;outputdestinations;outputskim;origins;destinations;nonetdata;linkcentretype;lineformula;juncformula;ignorenonlinear;bidir;oneway;vertoneway;oversample;"
-								  "aadtfield;t;a;s;jp;disable;zonedist;odmatrix;intermediates;linefield;c;e;"
+								  "aadtfield;t;a;s;jp;disable;zonedist;odmatrix;intermediates;radmetric;radlineformula;radjuncformula;radcustommetric;linefield;c;e;"
 								  "skimorigzone;skimdestzone;skimzone;bandedradii;linerand;juncrand;zonesums;origweightformula;destweightformula;datatokeep;textdatatokeep",
-
 								  //default values for those keywords if unspecified by user (0 is false for booleans)
 								  "juncformula=0;preserve_net_config=0;start_gs=;end_gs=;radii=n;metric=angular;cont=0;pre=;post=;nobetweenness=0;nojunctions=0;nohull=0;linkonly=0;"
 								  "forcecontorigin=0;nqpdn=1;nqpdd=1;arcxytol=;arcztol=;xytol=;ztol=;skipzeroweightorigins=0;skipzeroweightdestinations=1;skipfraction=1;skipmod=0;"
@@ -263,9 +247,8 @@ private:
 								  "weight=;custommetric=;weight_type=link;origweight=;destweight=;linkcentretype=;lineformula=;"
 								  "outputgeodesics=0;outputhulls=0;outputnetradii=0;outputdestinations=0;outputskim=0;origins=;destinations=;nonetdata=0;ignorenonlinear=0;bidir=0;oneway=;vertoneway=;oversample=1;"
 								  "aadtfield=aadt;t=default;a=default;s=default;jp=default;disable=;zonedist=euc;odmatrix=0;intermediates=;"
-								  "linefield=line;c=default;e=default;"
+								  "radmetric=euclidean;radlineformula=;radjuncformula=0;radcustommetric=;linefield=line;c=default;e=default;"
 								  "skimorigzone=;skimdestzone=;skimzone=;bandedradii=0;linerand=0;juncrand=0;zonesums=;origweightformula=;destweightformula=;datatokeep=;textdatatokeep=",
-
 							      configstring);
 
 		set_net_gs_data(config);
@@ -297,11 +280,11 @@ private:
 			if (pos==string::npos) throw BadConfigException("Encountered zone sum without @ to specify zone field name: "+s);
 			string expr = rest.substr(0,pos);
 			string zfn = rest.substr(pos+1);
-			shared_ptr<NetExpectedDataSource<string> > das(new NetExpectedDataSource<string>(zfn,net,print_warning_callback));
+			boost::shared_ptr<NetExpectedDataSource<string> > das(new NetExpectedDataSource<string>(zfn,net,print_warning_callback));
 			add_expected_data(&*das);
 
-			shared_ptr<HybridMetricEvaluator> eval(new HybridMetricEvaluator(expr,"0",net,this));
-			shared_ptr<Table<long double> > zone_sum_table(new Table<long double>(varname.c_str(),das->get_name().c_str()));
+			boost::shared_ptr<HybridMetricEvaluator> eval(new HybridMetricEvaluator(expr,"0",net,this));
+			boost::shared_ptr<Table<long double> > zone_sum_table(new Table<long double>(varname.c_str(),das->get_name().c_str()));
 			zonesumtables.push_back(zone_sum_table);
 			zone_sum_evaluators.push_back(ZoneSum(varname,das,eval,zone_sum_table));
 		}
@@ -375,21 +358,25 @@ private:
 		{
 			geodesics = sDNAGeometryCollection(output_name_prefix+"geodesics"+output_name_postfix,POLYLINEZ,get_geodesic_field_metadata());
 		  	geometry_outputs.push_back(&geodesics);
+			
 		}
 		if (output_hulls)
 		{
 			hulls = sDNAGeometryCollection(output_name_prefix+"hulls"+output_name_postfix,POLYGON,get_hull_or_netradius_field_metadata());
 		  	geometry_outputs.push_back(&hulls);
+			
 		}
 		if (output_netradii)
 		{
 			netradii = sDNAGeometryCollection(output_name_prefix+"netradii"+output_name_postfix,MULTIPOLYLINEZ,get_hull_or_netradius_field_metadata());
 			geometry_outputs.push_back(&netradii);
+			
 		}
 		if (output_destinations)
 		{
 			destinationgeoms = sDNAGeometryCollection(output_name_prefix+"destinations"+output_name_postfix,POLYLINEZ,get_destination_field_metadata());
 			geometry_outputs.push_back(&destinationgeoms);
+			
 		}
 
 		vector<string> skiporiginsexcept_s = config.get_vector("origins");
@@ -496,6 +483,21 @@ private:
 
 		analysis_evaluator_factory.reset(create_metric_from_config(config,"metric","lineformula","juncformula","custommetric"));
 
+		string rad_metric_s = config.get_string("radmetric");
+		to_lower(rad_metric_s);
+		if (rad_metric_s == "match_analytical")
+			radial_evaluator_factory.reset(create_metric_from_config(config,"metric","lineformula","juncformula","custommetric"));
+		else
+			radial_evaluator_factory.reset(create_metric_from_config(config,"radmetric","radlineformula","radjuncformula","radcustommetric"));
+		
+		string rad_metric = config.get_string("radmetric");
+		to_lower(rad_metric);
+		if (rad_metric!="euclidean")
+		{
+			if (cont_space)
+				throw BadConfigException("Non-Euclidean radial metric is not compatible with Continuous Space.\nIf you think you need this feature we can possibly implement it - please get in touch to discuss.");
+		}
+
 		acc_dist_constant_factor = 0;
 		string default_centre_type;
 		if	(out_measure=="angular")
@@ -537,7 +539,7 @@ private:
 		skip_fraction = config.get_long("skipfraction");
 		skip_mod = config.get_long("skipmod");
 		strict_network_cut = !config.get_bool("nostrictnetworkcut");
-
+		
 		run_closeness = !config.get_bool("linkonly");
 		run_betweenness = !config.get_bool("nobetweenness");
 		run_junctions = !config.get_bool("nojunctions");
@@ -594,7 +596,7 @@ private:
 		vector<string> data_names;
 		BOOST_FOREACH(ZoneSum zs, zone_sum_evaluators)
 			data_names.push_back(zs.varname);
-		BOOST_FOREACH(shared_ptr<Table<float> > zdt, zonedatatables)
+		BOOST_FOREACH(boost::shared_ptr<Table<float> > zdt, zonedatatables)
 			data_names.push_back(zdt->name());
 		BOOST_FOREACH(NetExpectedDataSource<float>* neds,expecteddata_netonly_nodupl())
 			data_names.push_back(neds->get_name());
@@ -781,7 +783,7 @@ public:
 	void get_all_outputs_c(float* buffer, long arcid)	{ output_map.get_outputs_c(buffer,net->link_container[arcid],oversample); }
 	
 	SDNAIntegralCalculation(Net *net,char *configstring,
-		int (__cdecl *set_progressor_callback)(float), int(__cdecl *print_warning_callback)(const char*), vector<shared_ptr<Table<float>>>* tables1d_in=NULL)
+		int (__cdecl *set_progressor_callback)(float), int(__cdecl *print_warning_callback)(const char*), vector<boost::shared_ptr<Table<float>>>* tables1d_in=NULL)
 		: Calculation(net,print_warning_callback), 
 	      set_progressor_callback(set_progressor_callback),
 		  using_od_matrix_bool(false),
@@ -833,8 +835,8 @@ private:
 	IdIndexedArray<Edge *,EdgeId> *radial_backlinks_edge;
 
 	//the following are null if uncomputed
-	shared_ptr<IdIndexedArray<double,EdgeId>> anal_best_costs_reaching_edge; 
-	shared_ptr<IdIndexedArray<Edge *,EdgeId> > anal_backlinks_edge; 
+	boost::shared_ptr<IdIndexedArray<double,EdgeId>> anal_best_costs_reaching_edge; 
+	boost::shared_ptr<IdIndexedArray<Edge *,EdgeId> > anal_backlinks_edge; 
 	
 	//generates partial net radius r, requires radial costs to be precomputed
 	//anal_best_costs and anal_backlinks are default constructed to NULL shared ptr
@@ -859,8 +861,8 @@ private:
 				&*anal_backlinks_edge);
 	}
 
-	void assign_analytical_costs(shared_ptr<IdIndexedArray<double,EdgeId>> shared_anal_best_costs_reaching_edge,
-		shared_ptr<IdIndexedArray<Edge *,EdgeId>> shared_anal_backlinks_edge)
+	void assign_analytical_costs(boost::shared_ptr<IdIndexedArray<double,EdgeId>> shared_anal_best_costs_reaching_edge,
+		boost::shared_ptr<IdIndexedArray<Edge *,EdgeId>> shared_anal_backlinks_edge)
 	{
 		anal_best_costs_reaching_edge = shared_anal_best_costs_reaching_edge;
 		anal_backlinks_edge = shared_anal_backlinks_edge;
@@ -1072,8 +1074,8 @@ private:
 	JunctionCosts junction_radial_costs;
 
 	//these may or may not be computed for all nets together:
-	shared_ptr<IdIndexedArray<double,EdgeId>> shared_anal_best_costs_reaching_edge; 
-	shared_ptr<IdIndexedArray<Edge *,EdgeId>> shared_anal_backlinks_edge; 
+	boost::shared_ptr<IdIndexedArray<double,EdgeId>> shared_anal_best_costs_reaching_edge; 
+	boost::shared_ptr<IdIndexedArray<Edge *,EdgeId>> shared_anal_backlinks_edge; 
 
 public:
 	IdIndexedArray<Edge *,EdgeId> *get_radial_backlinks() { assert(radial_backlinks_edge.isInitialized()); return &radial_backlinks_edge;}

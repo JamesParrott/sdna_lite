@@ -1,19 +1,3 @@
-//sDNA software for spatial network analysis 
-//Copyright (C) 2011-2019 Cardiff University
-
-//This program is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//(at your option) any later version.
-
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
-//You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 #include "stdafx.h"
 #include "net.h"
 #include "sdna_geometry_collections.h"
@@ -27,11 +11,11 @@ class DataExpectedByExpression;
 struct ZoneSum
 {
 	string varname;
-	shared_ptr<NetExpectedDataSource<string> > zone_das;
-	shared_ptr<HybridMetricEvaluator> eval;
-	shared_ptr<Table<long double> > table;
-	ZoneSum(string varname,shared_ptr<NetExpectedDataSource<string> > zone_das,shared_ptr<HybridMetricEvaluator> eval,
-		shared_ptr<Table<long double> > table)
+	boost::shared_ptr<NetExpectedDataSource<string> > zone_das;
+	boost::shared_ptr<HybridMetricEvaluator> eval;
+	boost::shared_ptr<Table<long double> > table;
+	ZoneSum(string varname,boost::shared_ptr<NetExpectedDataSource<string> > zone_das,boost::shared_ptr<HybridMetricEvaluator> eval,
+		boost::shared_ptr<Table<long double> > table)
 		: varname(varname),zone_das(zone_das),eval(eval),table(table) {}
 };
 
@@ -46,8 +30,8 @@ protected:
 	//bit ugly that these things are here, rather than in sdnaintegralcalculation
 	//fixme consider refactor (not trivial as they are coupled with data initialization which belongs here, and maybe prepareoperation will want zone data one day)
 	scoped_ptr<Table2d> od_matrix;
-	vector<shared_ptr<Table<float> > > zonedatatables;
-	vector<shared_ptr<Table<long double> > > zonesumtables;
+	vector<boost::shared_ptr<Table<float> > > zonedatatables;
+	vector<boost::shared_ptr<Table<long double> > > zonesumtables;
 	vector<ZoneSum > zone_sum_evaluators;
 
 	//for 2d matrices only
@@ -69,7 +53,9 @@ protected:
 		if (config.get_string("xytol")!="")
 			xytol=config.get_double("xytol");
 		if (config.get_string("ztol")!="") 
+		{
 			ztol=config.get_double("ztol");
+		}
 		stringstream s;
 		s << "Using xytolerance=" << xytol << ", ztolerance=" << ztol;
 		print_warning_callback(s.str().c_str());
@@ -100,9 +86,9 @@ public:
 	}
 	void add_expected_data_for_table_zonefields()
 	{
-		BOOST_FOREACH(shared_ptr<Table<float>> t,zonedatatables)
+		BOOST_FOREACH(boost::shared_ptr<Table<float>> t,zonedatatables)
 		{
-			shared_ptr<NetExpectedDataSource<string> > zonedas = shared_ptr<NetExpectedDataSource<string> >(
+			boost::shared_ptr<NetExpectedDataSource<string> > zonedas = boost::shared_ptr<NetExpectedDataSource<string> >(
 				new NetExpectedDataSource<string>(t->zonefieldname(),net,print_warning_callback));
 			t->setNameDas(zonedas);
 			add_expected_data(&*zonedas);
@@ -114,7 +100,7 @@ public:
 	void add_expected_data(NetExpectedDataSource<float> *n) 
 	{
 		bool matching_table = false;
-		BOOST_FOREACH(shared_ptr<Table<float>> zdt,zonedatatables)
+		BOOST_FOREACH(boost::shared_ptr<Table<float>> zdt,zonedatatables)
 			if (zdt->name()==n->get_name())
 				matching_table = true; 
 		if (!matching_table)
@@ -263,9 +249,9 @@ public:
 			result.push_back(FieldMetaData(fSTRING,netd->get_name()));
 		BOOST_FOREACH(NetExpectedDataSource<float>* netd,netdata)
 			result.push_back(FieldMetaData(fFLOAT,netd->get_name()));
-		BOOST_FOREACH(shared_ptr<Table<float>> zdt,c->zonedatatables)
+		BOOST_FOREACH(boost::shared_ptr<Table<float>> zdt,c->zonedatatables)
 			result.push_back(FieldMetaData(fFLOAT,zdt->name()));
-		BOOST_FOREACH(shared_ptr<Table<long double>> zst,c->zonesumtables)
+		BOOST_FOREACH(boost::shared_ptr<Table<long double>> zst,c->zonesumtables)
 			result.push_back(FieldMetaData(fFLOAT,zst->name()));
 		metadata=result; //for debug
 		return result;
@@ -289,12 +275,12 @@ public:
 			outputs.push_back(SDNAVariant(s->get_data(link)));
 			assert(s->get_name()==metadata[index++].name);
 		}
-		BOOST_FOREACH(shared_ptr<Table<float>> zdt,c->zonedatatables)
+		BOOST_FOREACH(boost::shared_ptr<Table<float>> zdt,c->zonedatatables)
 		{
 			outputs.push_back(zdt->getData(link));
 			assert(zdt->name()==metadata[index++].name);
 		}
-		BOOST_FOREACH(shared_ptr<Table<long double>> zst,c->zonesumtables)
+		BOOST_FOREACH(boost::shared_ptr<Table<long double>> zst,c->zonesumtables)
 		{
 			outputs.push_back(static_cast<float>(zst->getData(link)));
 			assert(zst->name()==metadata[index++].name);

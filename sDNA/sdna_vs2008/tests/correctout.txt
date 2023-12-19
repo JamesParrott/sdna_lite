@@ -6102,6 +6102,1249 @@ destroying
 done
 
 
+Choice Test, Hybrid analysis, discrete space
+WARNING: custommetric was supplied but is not being used
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=5,6,10,50,63,n;metric=HYBRID;cont=False;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=1,(FULLeuc!=0)?euc/FULLeuc*custom_cost:custom_cost;
+expected names net only: ['start_gs', 'end_gs', 'weight', 'custom_cost']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+R5 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R6 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R10 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R50 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R50 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 50
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+R63 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R63 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 63
+      R63 cost from link 10-12 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 10 radius 63
+      R63 cost from link 10-13 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 10 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 10-12 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 10-13 is 56
+crow flies distance is 53.0094
+R1.79769e+308 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R1.79769e+308 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-12 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-13 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 10 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 10-12 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 10-13 is 56
+crow flies distance is 53.0094
+R5 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R6 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R10 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R50 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R50 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 50
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+R63 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R63 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 63
+      R63 cost from link 11-12 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 11 radius 63
+      R63 cost from link 11-13 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 11 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 11-12 is 59
+crow flies distance is 50.8035
+euclidean geodesic from link 11-13 is 59
+crow flies distance is 46.0977
+R1.79769e+308 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R1.79769e+308 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-12 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-13 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 11 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 11-12 is 59
+crow flies distance is 50.8035
+euclidean geodesic from link 11-13 is 59
+crow flies distance is 46.0977
+R5 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R6 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R10 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R50 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R63 origin 12   (linkid 2)
+     analytical costs per edge: 0.5,-,0.5,1.5,0,0,1.5,-,
+     analytical backlinks per edge: 5,-,5,0,-,-,0,-,
+      R63 cost from link 12-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 63
+      R63 cost from link 12-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 12 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 12-11 is 59
+crow flies distance is 50.8035
+R1.79769e+308 origin 12   (linkid 2)
+     analytical costs per edge: 0.5,2.5,0.5,1.5,0,0,1.5,-,
+     analytical backlinks per edge: 5,2,5,0,-,-,0,-,
+      R1.79769e+308 cost from link 12-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-13 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 12 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 12-11 is 59
+crow flies distance is 50.8035
+      R1.79769e+308 cost from link 12-13 adds 1 to betweenness of link 10(edge 0) with prop 1 weight 1
+euclidean geodesic from link 12-13 is 112
+crow flies distance is 76.3806
+R5 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R6 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R10 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R50 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R63 origin 13   (linkid 3)
+     analytical costs per edge: -,0.5,1.5,0.5,1.5,-,0,0,
+     analytical backlinks per edge: -,7,1,7,1,-,-,-,
+      R63 cost from link 13-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 13 radius 63
+      R63 cost from link 13-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 3 to hull of link 13 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (5,0,0)(4,0,0)(4,1,0)(3,1,0)(3,0,0)(2,0,0)(2,1,0)(2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from end of edge 3
+     (5,0,0)(5,2,0)(10,2,0)(10,3,0)(9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+euclidean geodesic from link 13-11 is 59
+crow flies distance is 46.0977
+R1.79769e+308 origin 13   (linkid 3)
+     analytical costs per edge: 2.5,0.5,1.5,0.5,1.5,-,0,0,
+     analytical backlinks per edge: 3,7,1,7,1,-,-,-,
+      R1.79769e+308 cost from link 13-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-12 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 13 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+euclidean geodesic from link 13-11 is 59
+crow flies distance is 46.0977
+      R1.79769e+308 cost from link 13-12 adds 1 to betweenness of link 10(edge 1) with prop 1 weight 1
+euclidean geodesic from link 13-12 is 112
+crow flies distance is 76.3806
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,HMf,HMb,SHD5,MHD5,NQPDH5,BtH5,TPBtH5,TPD5,Lnk5,Len5,AngD5,Wt5,Jnc5,Con5,SGLH5,MGLH5,SCF5,MCF5,DivH5,HullA5,HullP5,HullR5,HullB5,HullSI5,PrbW5,PrbE5,SHD6,MHD6,NQPDH6,BtH6,TPBtH6,TPD6,Lnk6,Len6,AngD6,Wt6,Jnc6,Con6,SGLH6,MGLH6,SCF6,MCF6,DivH6,HullA6,HullP6,HullR6,HullB6,HullSI6,PrbW6,PrbE6,SHD10,MHD10,NQPDH10,BtH10,TPBtH10,TPD10,Lnk10,Len10,AngD10,Wt10,Jnc10,Con10,SGLH10,MGLH10,SCF10,MCF10,DivH10,HullA10,HullP10,HullR10,HullB10,HullSI10,PrbW10,PrbE10,SHD50,MHD50,NQPDH50,BtH50,TPBtH50,TPD50,Lnk50,Len50,AngD50,Wt50,Jnc50,Con50,SGLH50,MGLH50,SCF50,MCF50,DivH50,HullA50,HullP50,HullR50,HullB50,HullSI50,PrbW50,PrbE50,SHD63,MHD63,NQPDH63,BtH63,TPBtH63,TPD63,Lnk63,Len63,AngD63,Wt63,Jnc63,Con63,SGLH63,MGLH63,SCF63,MCF63,DivH63,HullA63,HullP63,HullR63,HullB63,HullSI63,PrbW63,PrbE63,SHDn,MHDn,NQPDHn,BtHn,TPBtHn,TPDn,Lnkn,Lenn,AngDn,Wtn,Jncn,Conn,SGLHn,MGLHn,SCFn,MCFn,DivHn,HullAn,HullPn,HullRn,HullBn,HullSIn,PrbWn,PrbEn
+created output buffer size float * 152
+
+OUTPUT DATA:
+Line Connectivity                  4  4  2  2
+Line Length                        12  18  100  100
+Link Fraction                      1  1  1  1
+Line Ang Curvature                 810  270  0  0
+Line Sinuosity                     2.05798  3.08697  1  1
+Line Bearing                       120.964  120.964  0  90
+Hybrid Metric fwd                  1  2  1  1
+Hybrid Metric bwd                  1  2  1  1
+Sum Hybrid Dist R5                 0.333333  0.666667  0.333333  0.333333
+Mean Hybrid Dist R5                0.333333  0.666667  0.333333  0.333333
+NetQuantPD Hybrid R5               3  1.5  3  3
+Betweenness Hybrid R5              0.333333  0.333333  0.333333  0.333333
+TPBetweenness Hybrid R5            0.333333  0.333333  0.333333  0.333333
+TPDestination R5                   1  1  1  1
+Links R5                           1  1  1  1
+Length R5                          12  18  100  100
+Ang Dist R5                        810  270  0  0
+Weight R5                          1  1  1  1
+Junctions R5                       0  0  0  0
+Connectivity R5                    0  0  0  0
+SumGeoLen Hybrid R5                4  6  33.3333  33.3333
+MeanGeoLen Hybrid R5               4  6  33.3333  33.3333
+Sum Crow Flight R5                 1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R5                1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Hybrid R5          2.05798  3.08697  1  1
+Convex Hull Area R5                8.5  17.5  0  0
+Convex Hull Perimeter R5           13.8863  22.2161  200  200
+Convex Hull Max Radius R5          3.16228  9  50  50
+Convex Hull Bearing R5             108.435  270  180  270
+Convex Hull Shape Index R5         1.80529  2.24434  inf  inf
+Problem route weight R5            0  0  0  0
+Problem route excess R5            0  0  0  0
+Sum Hybrid Dist R6                 0.333333  0.666667  0.333333  0.333333
+Mean Hybrid Dist R6                0.333333  0.666667  0.333333  0.333333
+NetQuantPD Hybrid R6               3  1.5  3  3
+Betweenness Hybrid R6              0.333333  0.333333  0.333333  0.333333
+TPBetweenness Hybrid R6            0.333333  0.333333  0.333333  0.333333
+TPDestination R6                   1  1  1  1
+Links R6                           1  1  1  1
+Length R6                          12  18  100  100
+Ang Dist R6                        810  270  0  0
+Weight R6                          1  1  1  1
+Junctions R6                       2  0  0  0
+Connectivity R6                    6  0  0  0
+SumGeoLen Hybrid R6                4  6  33.3333  33.3333
+MeanGeoLen Hybrid R6               4  6  33.3333  33.3333
+Sum Crow Flight R6                 1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R6                1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Hybrid R6          2.05798  3.08697  1  1
+Convex Hull Area R6                8.5  17.5  0  0
+Convex Hull Perimeter R6           13.8863  22.2161  200  200
+Convex Hull Max Radius R6          3.16228  9  50  50
+Convex Hull Bearing R6             108.435  270  180  270
+Convex Hull Shape Index R6         1.80529  2.24434  inf  inf
+Problem route weight R6            0  0  0  0
+Problem route excess R6            0  0  0  0
+Sum Hybrid Dist R10                0.333333  0.666667  0.333333  0.333333
+Mean Hybrid Dist R10               0.333333  0.666667  0.333333  0.333333
+NetQuantPD Hybrid R10              3  1.5  3  3
+Betweenness Hybrid R10             0.333333  0.333333  0.333333  0.333333
+TPBetweenness Hybrid R10           0.333333  0.333333  0.333333  0.333333
+TPDestination R10                  1  1  1  1
+Links R10                          1  1  1  1
+Length R10                         12  18  100  100
+Ang Dist R10                       810  270  0  0
+Weight R10                         1  1  1  1
+Junctions R10                      2  2  0  0
+Connectivity R10                   6  6  0  0
+SumGeoLen Hybrid R10               4  6  33.3333  33.3333
+MeanGeoLen Hybrid R10              4  6  33.3333  33.3333
+Sum Crow Flight R10                1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R10               1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Hybrid R10         2.05798  3.08697  1  1
+Convex Hull Area R10               8.5  17.5  0  0
+Convex Hull Perimeter R10          13.8863  22.2161  200  200
+Convex Hull Max Radius R10         3.16228  9  50  50
+Convex Hull Bearing R10            108.435  270  180  270
+Convex Hull Shape Index R10        1.80529  2.24434  inf  inf
+Problem route weight R10           0  0  0  0
+Problem route excess R10           0  0  0  0
+Sum Hybrid Dist R50                1.83333  2.16667  0.333333  0.333333
+Mean Hybrid Dist R50               0.916667  1.08333  0.333333  0.333333
+NetQuantPD Hybrid R50              3.66667  2.16667  3  3
+Betweenness Hybrid R50             1.33333  1.33333  0.333333  0.333333
+TPBetweenness Hybrid R50           0.666667  0.666667  0.333333  0.333333
+TPDestination R50                  1  1  1  1
+Links R50                          2  2  1  1
+Length R50                         30  30  100  100
+Ang Dist R50                       1080  1080  0  0
+Weight R50                         2  2  1  1
+Junctions R50                      2  2  1  1
+Connectivity R50                   6  6  3  3
+SumGeoLen Hybrid R50               19  21  33.3333  33.3333
+MeanGeoLen Hybrid R50              9.5  10.5  33.3333  33.3333
+Sum Crow Flight R50                9.22376  9.22376  33.3333  33.3333
+Mean Crow Flight R50               4.61188  4.61188  33.3333  33.3333
+Diversion Ratio Hybrid R50         2.0592  2.57369  1  1
+Convex Hull Area R50               25  25  0  0
+Convex Hull Perimeter R50          24.3852  24.3852  200  200
+Convex Hull Max Radius R50         8.24621  9.48683  50  50
+Convex Hull Bearing R50            75.9638  251.565  180  270
+Convex Hull Shape Index R50        1.89279  1.89279  inf  inf
+Problem route weight R50           0  0  0  0
+Problem route excess R50           0  0  0  0
+Sum Hybrid Dist R63                3.83333  5.16667  2.83333  2.83333
+Mean Hybrid Dist R63               0.958333  1.29167  0.944444  0.944444
+NetQuantPD Hybrid R63              5.66667  3.5  4.66667  4.66667
+Betweenness Hybrid R63             3.33333  3.33333  2.33333  2.33333
+TPBetweenness Hybrid R63           0.916667  0.916667  0.694444  0.694444
+TPDestination R63                  1.16667  1.16667  0.833333  0.833333
+Links R63                          4  4  3  3
+Length R63                         230  230  130  130
+Ang Dist R63                       1080  1080  1080  1080
+Weight R63                         4  4  3  3
+Junctions R63                      2  2  2  2
+Connectivity R63                   6  6  6  6
+SumGeoLen Hybrid R63               131  139  148.333  148.333
+MeanGeoLen Hybrid R63              32.75  34.75  49.4444  49.4444
+Sum Crow Flight R63                114.272  106.125  136.175  132.44
+Mean Crow Flight R63               28.5679  26.5313  45.3918  44.1468
+Diversion Ratio Hybrid R63         1.56273  1.89715  1.07915  1.1121
+Convex Hull Area R63               5407.5  5407.5  525  172.5
+Convex Hull Perimeter R63          355.085  355.085  214.884  213.047
+Convex Hull Max Radius R63         103.005  100.404  53.2353  55.0818
+Convex Hull Bearing R63            90.5563  354.857  174.611  273.122
+Convex Hull Shape Index R63        1.85549  1.85549  6.99904  20.9389
+Problem route weight R63           0  0  0  0
+Problem route excess R63           0  0  0  0
+Sum Hybrid Dist Rn                 3.83333  5.16667  4.83333  4.83333
+Mean Hybrid Dist Rn                0.958333  1.29167  1.20833  1.20833
+NetQuantPD Hybrid Rn               5.66667  3.5  5.16667  5.16667
+Betweenness Hybrid Rn              5.33333  3.33333  3.33333  3.33333
+TPBetweenness Hybrid Rn            1.33333  0.833333  0.833333  0.833333
+TPDestination Rn                   1  1  1  1
+Links Rn                           4  4  4  4
+Length Rn                          230  230  230  230
+Ang Dist Rn                        1080  1080  1080  1080
+Weight Rn                          4  4  4  4
+Junctions Rn                       2  2  2  2
+Connectivity Rn                    6  6  6  6
+SumGeoLen Hybrid Rn                131  139  260.333  260.333
+MeanGeoLen Hybrid Rn               32.75  34.75  65.0833  65.0833
+Sum Crow Flight Rn                 114.272  106.125  212.556  208.821
+Mean Crow Flight Rn                28.5679  26.5313  53.139  52.2053
+Diversion Ratio Hybrid Rn          1.56273  1.89715  1.17595  1.20066
+Convex Hull Area Rn                5407.5  5407.5  5407.5  5407.5
+Convex Hull Perimeter Rn           355.085  355.085  355.085  355.085
+Convex Hull Max Radius Rn          103.005  100.404  117.618  116.765
+Convex Hull Bearing Rn             90.5563  354.857  116.783  331.899
+Convex Hull Shape Index Rn         1.85549  1.85549  1.85549  1.85549
+Problem route weight Rn            0  0  0  0
+Problem route excess Rn            0  0  0  0
+
+
+destroying
+done
+
+
+
+
+Choice Test, Hybrid analysis, cont space
+WARNING: custommetric was supplied but is not being used
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=5,6,10,50,63,n;metric=HYBRID;cont=True;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=1,(FULLeuc!=0)?euc/FULLeuc*custom_cost:custom_cost;
+expected names net only: ['start_gs', 'end_gs', 'weight', 'custom_cost']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+R5 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 10
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,2,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(4,0,0)
+R6 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 10
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R10 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R10 cost from link 10-11 adds 0.722222 to closeness with prop 0.222222 weight 1
+     adding points from edge 2 to hull of link 10 radius 10
+      R10 cost from link 10-11 adds 0.722222 to closeness with prop 0.222222 weight 1
+     adding points from edge 3 to hull of link 10 radius 10
+      R10 cost from link 10-12 adds 0.52 to closeness with prop 0.04 weight 1
+     adding points from edge 4 to hull of link 10 radius 10
+      R10 cost from link 10-13 adds 0.52 to closeness with prop 0.04 weight 1
+     adding points from edge 6 to hull of link 10 radius 10
+adding origin points to hull for link 10
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(4,3,0)
+     unpacking partial points from end of edge 3
+     (5,0,0)(5,2,0)(7,2,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,7,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(9,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+centre of cut link is at (2,3,0)
+euclidean geodesic from link 10-11 is 8
+crow flies distance is 2
+centre of cut link is at (5,2,0)
+euclidean geodesic from link 10-11 is 8
+crow flies distance is 3.16228
+centre of cut link is at (0,5,0)
+euclidean geodesic from link 10-12 is 8
+crow flies distance is 4.47214
+centre of cut link is at (7,0,0)
+euclidean geodesic from link 10-13 is 8
+crow flies distance is 5.09902
+R50 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R50 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 50
+      R50 cost from link 10-12 adds 0.72 to closeness with prop 0.44 weight 1
+     adding points from edge 4 to hull of link 10 radius 50
+      R50 cost from link 10-13 adds 0.72 to closeness with prop 0.44 weight 1
+     adding points from edge 6 to hull of link 10 radius 50
+adding origin points to hull for link 10
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,47,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(49,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+centre of cut link is at (0,25,0)
+euclidean geodesic from link 10-12 is 28
+crow flies distance is 24.0832
+centre of cut link is at (27,0,0)
+euclidean geodesic from link 10-13 is 28
+crow flies distance is 25.02
+R63 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R63 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 63
+      R63 cost from link 10-12 adds 0.785 to closeness with prop 0.57 weight 1
+     adding points from edge 4 to hull of link 10 radius 63
+      R63 cost from link 10-13 adds 0.785 to closeness with prop 0.57 weight 1
+     adding points from edge 6 to hull of link 10 radius 63
+adding origin points to hull for link 10
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,60,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(62,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+centre of cut link is at (0,31.5,0)
+euclidean geodesic from link 10-12 is 34.5
+crow flies distance is 30.5655
+centre of cut link is at (33.5,0,0)
+euclidean geodesic from link 10-13 is 34.5
+crow flies distance is 31.5159
+R1.79769e+308 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R1.79769e+308 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-12 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-13 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 10 radius 1.79769e+308
+adding origin points to hull for link 10
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 10-12 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 10-13 is 56
+crow flies distance is 53.0094
+R5 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 11
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(4,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(7,2,0)
+R6 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 11
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(3,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(6,2,0)
+R10 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R10 cost from link 11-10 adds 1.04167 to closeness with prop 0.0833333 weight 1
+     adding points from edge 0 to hull of link 11 radius 10
+      R10 cost from link 11-10 adds 1.04167 to closeness with prop 0.0833333 weight 1
+     adding points from edge 1 to hull of link 11 radius 10
+      R10 cost from link 11-12 adds 1.005 to closeness with prop 0.01 weight 1
+     adding points from edge 4 to hull of link 11 radius 10
+      R10 cost from link 11-13 adds 1.005 to closeness with prop 0.01 weight 1
+     adding points from edge 6 to hull of link 11 radius 10
+adding origin points to hull for link 11
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,2,0)
+     unpacking partial points from end of edge 1
+     (5,0,0)(4,0,0)(4,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,4,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(6,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+centre of cut link is at (0,2.5,0)
+euclidean geodesic from link 11-10 is 9.5
+crow flies distance is 9.01388
+centre of cut link is at (4.5,0,0)
+euclidean geodesic from link 11-10 is 9.5
+crow flies distance is 5.40833
+centre of cut link is at (0,3.5,0)
+euclidean geodesic from link 11-12 is 9.5
+crow flies distance is 9.01388
+centre of cut link is at (5.5,0,0)
+euclidean geodesic from link 11-13 is 9.5
+crow flies distance is 4.60977
+R50 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R50 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 50
+      R50 cost from link 11-12 adds 1.205 to closeness with prop 0.41 weight 1
+     adding points from edge 4 to hull of link 11 radius 50
+      R50 cost from link 11-13 adds 1.205 to closeness with prop 0.41 weight 1
+     adding points from edge 6 to hull of link 11 radius 50
+adding origin points to hull for link 11
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,44,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(46,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+centre of cut link is at (0,23.5,0)
+euclidean geodesic from link 11-12 is 29.5
+crow flies distance is 22.3886
+centre of cut link is at (25.5,0,0)
+euclidean geodesic from link 11-13 is 29.5
+crow flies distance is 16.7705
+R63 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R63 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 63
+      R63 cost from link 11-12 adds 1.27 to closeness with prop 0.54 weight 1
+     adding points from edge 4 to hull of link 11 radius 63
+      R63 cost from link 11-13 adds 1.27 to closeness with prop 0.54 weight 1
+     adding points from edge 6 to hull of link 11 radius 63
+adding origin points to hull for link 11
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,57,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(59,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+centre of cut link is at (0,30,0)
+euclidean geodesic from link 11-12 is 36
+crow flies distance is 28.4605
+centre of cut link is at (32,0,0)
+euclidean geodesic from link 11-13 is 36
+crow flies distance is 23.1948
+R1.79769e+308 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R1.79769e+308 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-12 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-13 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 11 radius 1.79769e+308
+adding origin points to hull for link 11
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 11-12 is 59
+crow flies distance is 50.8035
+euclidean geodesic from link 11-13 is 59
+crow flies distance is 46.0977
+R5 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 12
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,48,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,58,0)
+R6 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 12
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,47,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,59,0)
+R10 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 12
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,43,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,63,0)
+R50 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 12
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R63 origin 12   (linkid 2)
+     analytical costs per edge: 0.5,-,0.5,1.5,0,0,1.5,-,
+     analytical backlinks per edge: 5,-,5,0,-,-,0,-,
+      R63 cost from link 12-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 63
+      R63 cost from link 12-11 adds 1.22222 to closeness with prop 0.722222 weight 1
+     adding points from edge 2 to hull of link 12 radius 63
+      R63 cost from link 12-11 adds 1.55556 to closeness with prop 0.0555556 weight 1
+     adding points from edge 3 to hull of link 12 radius 63
+      R63 cost from link 12-13 adds 1.505 to closeness with prop 0.01 weight 1
+     adding points from edge 6 to hull of link 12 radius 63
+adding origin points to hull for link 12
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(8,2,0)
+     unpacking partial points from end of edge 3
+     (5,0,0)(5,1,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(6,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+centre of cut link is at (6.5,3,0)
+euclidean geodesic from link 12-11 is 56.5
+crow flies distance is 50.4207
+centre of cut link is at (5,0.5,0)
+      R63 cost from link 12-11 adds 1 to betweenness of link 10(edge 0) with prop 0.0555556 weight 1
+euclidean geodesic from link 12-11 is 62.5
+crow flies distance is 52.7376
+centre of cut link is at (5.5,0,0)
+      R63 cost from link 12-13 adds 1 to betweenness of link 10(edge 0) with prop 0.01 weight 1
+euclidean geodesic from link 12-13 is 62.5
+crow flies distance is 53.2846
+R1.79769e+308 origin 12   (linkid 2)
+     analytical costs per edge: 0.5,2.5,0.5,1.5,0,0,1.5,-,
+     analytical backlinks per edge: 5,2,5,0,-,-,0,-,
+      R1.79769e+308 cost from link 12-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-13 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 12 radius 1.79769e+308
+adding origin points to hull for link 12
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 12-11 is 59
+crow flies distance is 50.8035
+      R1.79769e+308 cost from link 12-13 adds 1 to betweenness of link 10(edge 0) with prop 1 weight 1
+euclidean geodesic from link 12-13 is 112
+crow flies distance is 76.3806
+R5 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 13
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(50,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(60,0,0)
+R6 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 13
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(49,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(61,0,0)
+R10 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 13
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(45,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(65,0,0)
+R50 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+adding origin points to hull for link 13
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R63 origin 13   (linkid 3)
+     analytical costs per edge: -,0.5,1.5,0.5,1.5,-,0,0,
+     analytical backlinks per edge: -,7,1,7,1,-,-,-,
+      R63 cost from link 13-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 13 radius 63
+      R63 cost from link 13-11 adds 1.55556 to closeness with prop 0.0555556 weight 1
+     adding points from edge 2 to hull of link 13 radius 63
+      R63 cost from link 13-11 adds 1.22222 to closeness with prop 0.722222 weight 1
+     adding points from edge 3 to hull of link 13 radius 63
+      R63 cost from link 13-12 adds 1.505 to closeness with prop 0.01 weight 1
+     adding points from edge 4 to hull of link 13 radius 63
+adding origin points to hull for link 13
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (5,0,0)(4,0,0)(4,1,0)(3,1,0)(3,0,0)(2,0,0)(2,1,0)(2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(1,3,0)
+     unpacking partial points from end of edge 3
+     (5,0,0)(5,2,0)(10,2,0)(10,3,0)(9,3,0)(5,3,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,4,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+centre of cut link is at (0.5,3,0)
+      R63 cost from link 13-11 adds 1 to betweenness of link 10(edge 1) with prop 0.0555556 weight 1
+euclidean geodesic from link 13-11 is 62.5
+crow flies distance is 54.5825
+centre of cut link is at (9.5,2,0)
+euclidean geodesic from link 13-11 is 56.5
+crow flies distance is 45.5439
+centre of cut link is at (0,3.5,0)
+      R63 cost from link 13-12 adds 1 to betweenness of link 10(edge 1) with prop 0.01 weight 1
+euclidean geodesic from link 13-12 is 62.5
+crow flies distance is 55.1113
+R1.79769e+308 origin 13   (linkid 3)
+     analytical costs per edge: 2.5,0.5,1.5,0.5,1.5,-,0,0,
+     analytical backlinks per edge: 3,7,1,7,1,-,-,-,
+      R1.79769e+308 cost from link 13-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-12 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 13 radius 1.79769e+308
+adding origin points to hull for link 13
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+euclidean geodesic from link 13-11 is 59
+crow flies distance is 46.0977
+      R1.79769e+308 cost from link 13-12 adds 1 to betweenness of link 10(edge 1) with prop 1 weight 1
+euclidean geodesic from link 13-12 is 112
+crow flies distance is 76.3806
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,HMf,HMb,SHD5c,MHD5c,NQPDH5c,BtH5c,TPBtH5c,TPD5c,Lnk5c,Len5c,AngD5c,Wt5c,Jnc5c,Con5c,SGLH5c,MGLH5c,SCF5c,MCF5c,DivH5c,HullA5c,HullP5c,HullR5c,HullB5c,HullSI5c,PrbW5c,PrbE5c,SHD6c,MHD6c,NQPDH6c,BtH6c,TPBtH6c,TPD6c,Lnk6c,Len6c,AngD6c,Wt6c,Jnc6c,Con6c,SGLH6c,MGLH6c,SCF6c,MCF6c,DivH6c,HullA6c,HullP6c,HullR6c,HullB6c,HullSI6c,PrbW6c,PrbE6c,SHD10c,MHD10c,NQPDH10c,BtH10c,TPBtH10c,TPD10c,Lnk10c,Len10c,AngD10c,Wt10c,Jnc10c,Con10c,SGLH10c,MGLH10c,SCF10c,MCF10c,DivH10c,HullA10c,HullP10c,HullR10c,HullB10c,HullSI10c,PrbW10c,PrbE10c,SHD50c,MHD50c,NQPDH50c,BtH50c,TPBtH50c,TPD50c,Lnk50c,Len50c,AngD50c,Wt50c,Jnc50c,Con50c,SGLH50c,MGLH50c,SCF50c,MCF50c,DivH50c,HullA50c,HullP50c,HullR50c,HullB50c,HullSI50c,PrbW50c,PrbE50c,SHD63c,MHD63c,NQPDH63c,BtH63c,TPBtH63c,TPD63c,Lnk63c,Len63c,AngD63c,Wt63c,Jnc63c,Con63c,SGLH63c,MGLH63c,SCF63c,MCF63c,DivH63c,HullA63c,HullP63c,HullR63c,HullB63c,HullSI63c,PrbW63c,PrbE63c,SHDnc,MHDnc,NQPDHnc,BtHnc,TPBtHnc,TPDnc,Lnknc,Lennc,AngDnc,Wtnc,Jncnc,Connc,SGLHnc,MGLHnc,SCFnc,MCFnc,DivHnc,HullAnc,HullPnc,HullRnc,HullBnc,HullSInc,PrbWnc,PrbEnc
+created output buffer size float * 152
+
+OUTPUT DATA:
+Line Connectivity                  4  4  2  2
+Line Length                        12  18  100  100
+Link Fraction                      1  1  1  1
+Line Ang Curvature                 810  270  0  0
+Line Sinuosity                     2.05798  3.08697  1  1
+Line Bearing                       120.964  120.964  0  90
+Hybrid Metric fwd                  1  2  1  1
+Hybrid Metric bwd                  1  2  1  1
+Sum Hybrid Dist R5c                0.231481  0.205761  0.00333333  0.00333333
+Mean Hybrid Dist R5c               0.277778  0.37037  0.0333333  0.0333333
+NetQuantPD Hybrid R5c              3  1.5  3  3
+Betweenness Hybrid R5c             0.231481  0.102881  0.00333333  0.00333333
+TPBetweenness Hybrid R5c           0.277778  0.185185  0.0333333  0.0333333
+TPDestination R5c                  0.833333  0.555556  0.1  0.1
+Links R5c                          0.833333  0.555556  0.1  0.1
+Length R5c                         10  10  10  10
+Ang Dist R5c                       765  180  0  0
+Weight R5c                         0.833333  0.555556  0.1  0.1
+Junctions R5c                      0  0  0  0
+Connectivity R5c                   0  0  0  0
+SumGeoLen Hybrid R5c               2.77778  1.85185  0.333333  0.333333
+MeanGeoLen Hybrid R5c              3.33333  3.33333  3.33333  3.33333
+Sum Crow Flight R5c                1.34976  0.599892  0.333333  0.333333
+Mean Crow Flight R5c               1.61971  1.07981  3.33333  3.33333
+Diversion Ratio Hybrid R5c         2.05798  3.08697  1  1
+Convex Hull Area R5c               6  4.5  0  0
+Convex Hull Perimeter R5c          11.1231  13.1623  20  20
+Convex Hull Max Radius R5c         2.23607  5  5  5
+Convex Hull Bearing R5c            243.435  270  180  270
+Convex Hull Shape Index R5c        1.64093  3.06365  inf  inf
+Problem route weight R5c           0  0  0  0
+Problem route excess R5c           0  0  0  0
+Sum Hybrid Dist R6c                0.333333  0.296296  0.0048  0.0048
+Mean Hybrid Dist R6c               0.333333  0.444444  0.04  0.04
+NetQuantPD Hybrid R6c              3  1.5  3  3
+Betweenness Hybrid R6c             0.333333  0.148148  0.0048  0.0048
+TPBetweenness Hybrid R6c           0.333333  0.222222  0.04  0.04
+TPDestination R6c                  1  0.666667  0.12  0.12
+Links R6c                          1  0.666667  0.12  0.12
+Length R6c                         12  12  12  12
+Ang Dist R6c                       810  180  0  0
+Weight R6c                         1  0.666667  0.12  0.12
+Junctions R6c                      2  0  0  0
+Connectivity R6c                   6  0  0  0
+SumGeoLen Hybrid R6c               4  2.66667  0.48  0.48
+MeanGeoLen Hybrid R6c              4  4  4  4
+Sum Crow Flight R6c                1.94365  0.863845  0.48  0.48
+Mean Crow Flight R6c               1.94365  1.29577  4  4
+Diversion Ratio Hybrid R6c         2.05798  3.08697  1  1
+Convex Hull Area R6c               8.5  5.5  0  0
+Convex Hull Perimeter R6c          13.8863  15.1623  24  24
+Convex Hull Max Radius R6c         3.16228  6  6  6
+Convex Hull Bearing R6c            108.435  270  180  270
+Convex Hull Shape Index R6c        1.80529  3.32626  inf  inf
+Problem route weight R6c           0  0  0  0
+Problem route excess R6c           0  0  0  0
+Sum Hybrid Dist R10c               0.695921  0.860378  0.0133333  0.0133333
+Mean Hybrid Dist R10c              0.456508  0.725038  0.0666667  0.0666667
+NetQuantPD Hybrid R10c             3.76923  1.6799  3  3
+Betweenness Hybrid R10c            0.678889  0.648889  0.0383333  0.0383333
+TPBetweenness Hybrid R10c          0.460895  0.505323  0.0839997  0.0839997
+TPDestination R10c                 0.796426  1.13424  0.234666  0.234666
+Links R10c                         1.52444  1.18667  0.2  0.2
+Length R10c                        28  22  20  20
+Ang Dist R10c                      900  315  0  0
+Weight R10c                        1.52444  1.18667  0.2  0.2
+Junctions R10c                     2  2  0  0
+Connectivity R10c                  6  6  0  0
+SumGeoLen Hybrid R10c              8.19556  7.77333  1.33333  1.33333
+MeanGeoLen Hybrid R10c             5.37609  6.55056  6.66667  6.66667
+Sum Crow Flight R10c               3.47367  3.28174  1.33333  1.33333
+Mean Crow Flight R10c              2.27865  2.76551  6.66667  6.66667
+Diversion Ratio Hybrid R10c        2.38996  2.825  1  1
+Convex Hull Area R10c              33.5  27  0  0
+Convex Hull Perimeter R10c         27.4308  23.9941  40  40
+Convex Hull Max Radius R10c        7.07107  9.05538  10  10
+Convex Hull Bearing R10c           98.1301  263.66  180  270
+Convex Hull Shape Index R10c       1.7874  1.69683  inf  inf
+Problem route weight R10c          0  0  0  0
+Problem route excess R10c          0  0  0  0
+Sum Hybrid Dist R50c               2.46693  3.15477  0.333333  0.333333
+Mean Hybrid Dist R50c              0.856574  1.11871  0.333333  0.333333
+NetQuantPD Hybrid R50c             4.88889  2.84716  3  3
+Betweenness Hybrid R50c            1.77333  1.74333  0.758333  0.758333
+TPBetweenness Hybrid R50c          0.619435  0.614509  0.482417  0.482417
+TPDestination R50c                 0.701832  0.701832  1.29817  1.29817
+Links R50c                         2.88  2.82  1  1
+Length R50c                        118  112  100  100
+Ang Dist R50c                      1080  1080  0  0
+Weight R50c                        2.88  2.82  1  1
+Junctions R50c                     2  2  1  1
+Connectivity R50c                  6  6  3  3
+SumGeoLen Hybrid R50c              43.64  45.19  33.3333  33.3333
+MeanGeoLen Hybrid R50c             15.1528  16.0248  33.3333  33.3333
+Sum Crow Flight R50c               30.8292  25.279  33.3333  33.3333
+Mean Crow Flight R50c              10.7046  8.96418  33.3333  33.3333
+Diversion Ratio Hybrid R50c        1.7786  2.27263  1  1
+Convex Hull Area R50c              1151.5  1012  0  0
+Convex Hull Perimeter R50c         163.897  153.655  200  200
+Convex Hull Max Radius R50c        47.0106  41.9762  50  50
+Convex Hull Bearing R50c           91.2189  347.619  180  270
+Convex Hull Shape Index R50c       1.85638  1.85654  inf  inf
+Problem route weight R50c          0  0  0  0
+Problem route excess R50c          0  0  0  0
+Sum Hybrid Dist R63c               2.72823  3.53827  2.31752  2.31752
+Mean Hybrid Dist R63c              0.868864  1.14879  0.831314  0.831314
+NetQuantPD Hybrid R63c             5.1189  3.01706  4.63327  4.63327
+Betweenness Hybrid R63c            3.03444  2.65111  1.78722  1.78722
+TPBetweenness Hybrid R63c          1.015  0.884119  0.620435  0.620435
+TPDestination R63c                 1.36056  1.20114  0.719149  0.719149
+Links R63c                         3.14  3.08  2.78778  2.78778
+Length R63c                        144  138  127  127
+Ang Dist R63c                      1080  1080  990  1080
+Weight R63c                        3.14  3.08  2.78778  2.78778
+Junctions R63c                     2  2  2  2
+Connectivity R63c                  6  6  6  6
+SumGeoLen Hybrid R63c              58.33  59.88  134.236  134.236
+MeanGeoLen Hybrid R63c             18.5764  19.4416  48.1517  48.1517
+Sum Crow Flight R63c               44.6101  37.1176  125.249  122.819
+Mean Crow Flight R63c              14.2071  12.0512  44.9281  44.0563
+Diversion Ratio Hybrid R63c        1.7152  2.16511  1.06285  1.08593
+Convex Hull Area R63c              1860  1681.5  526  210
+Convex Hull Perimeter R63c         208.279  198.037  214.971  214.076
+Convex Hull Max Radius R63c        60.0083  54.7449  53.3385  55.1453
+Convex Hull Bearing R63c           90.9548  350.538  173.541  274.16
+Convex Hull Shape Index R63c       1.85595  1.85603  6.99139  17.3663
+Problem route weight R63c          0  0  0  0
+Problem route excess R63c          0  0  0  0
+Sum Hybrid Dist Rnc                3.83333  5.16667  4.83333  4.83333
+Mean Hybrid Dist Rnc               0.958333  1.29167  1.20833  1.20833
+NetQuantPD Hybrid Rnc              5.66667  3.5  5.16667  5.16667
+Betweenness Hybrid Rnc             5.33333  3.33333  3.33333  3.33333
+TPBetweenness Hybrid Rnc           1.33333  0.833333  0.833333  0.833333
+TPDestination Rnc                  1  1  1  1
+Links Rnc                          4  4  4  4
+Length Rnc                         230  230  230  230
+Ang Dist Rnc                       1080  1080  1080  1080
+Weight Rnc                         4  4  4  4
+Junctions Rnc                      2  2  2  2
+Connectivity Rnc                   6  6  6  6
+SumGeoLen Hybrid Rnc               131  139  260.333  260.333
+MeanGeoLen Hybrid Rnc              32.75  34.75  65.0833  65.0833
+Sum Crow Flight Rnc                114.272  106.125  212.556  208.821
+Mean Crow Flight Rnc               28.5679  26.5313  53.139  52.2053
+Diversion Ratio Hybrid Rnc         1.56273  1.89715  1.17595  1.20066
+Convex Hull Area Rnc               5407.5  5407.5  5407.5  5407.5
+Convex Hull Perimeter Rnc          355.085  355.085  355.085  355.085
+Convex Hull Max Radius Rnc         103.005  100.404  117.618  116.765
+Convex Hull Bearing Rnc            90.5563  354.857  116.783  331.899
+Convex Hull Shape Index Rnc        1.85549  1.85549  1.85549  1.85549
+Problem route weight Rnc           0  0  0  0
+Problem route excess Rnc           0  0  0  0
+
+
+destroying
+done
+
+
+Choice Test, Hybrid analysis, negative formula
+WARNING: custommetric was supplied but is not being used
+WARNING: ignorenonlinear is in use, and the link formula doesn't look linear.
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=5,6,10,50,63,n;metric=HYBRID;cont=False;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=-1;
+expected names net only: ['start_gs', 'end_gs', 'weight']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+ERROR: Formula evaluation gave negative result for link 10
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+destroying
+done
+
+
 Choice Test, Non-strict, Angular analysis, discrete space, unweighted
 Using default of angular link centres for angular analysis
 Using xytolerance=0, ztolerance=0
@@ -15476,6 +16719,403 @@ destroying
 done
 
 
+Global Radius Only Test, Hybrid analysis, discrete space
+WARNING: custommetric was supplied but is not being used
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=n;metric=HYBRID;cont=False;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=1,(FULLeuc!=0)?euc/FULLeuc*custom_cost:custom_cost;
+expected names net only: ['start_gs', 'end_gs', 'weight', 'custom_cost']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+R1.79769e+308 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R1.79769e+308 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-12 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-13 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 10 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 10-12 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 10-13 is 56
+crow flies distance is 53.0094
+R1.79769e+308 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R1.79769e+308 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-12 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-13 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 11 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 11-12 is 59
+crow flies distance is 50.8035
+euclidean geodesic from link 11-13 is 59
+crow flies distance is 46.0977
+R1.79769e+308 origin 12   (linkid 2)
+     analytical costs per edge: 0.5,2.5,0.5,1.5,0,0,1.5,-,
+     analytical backlinks per edge: 5,2,5,0,-,-,0,-,
+      R1.79769e+308 cost from link 12-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-13 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 12 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 12-11 is 59
+crow flies distance is 50.8035
+      R1.79769e+308 cost from link 12-13 adds 1 to betweenness of link 10(edge 0) with prop 1 weight 1
+euclidean geodesic from link 12-13 is 112
+crow flies distance is 76.3806
+R1.79769e+308 origin 13   (linkid 3)
+     analytical costs per edge: 2.5,0.5,1.5,0.5,1.5,-,0,0,
+     analytical backlinks per edge: 3,7,1,7,1,-,-,-,
+      R1.79769e+308 cost from link 13-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-12 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 13 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+euclidean geodesic from link 13-11 is 59
+crow flies distance is 46.0977
+      R1.79769e+308 cost from link 13-12 adds 1 to betweenness of link 10(edge 1) with prop 1 weight 1
+euclidean geodesic from link 13-12 is 112
+crow flies distance is 76.3806
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,HMf,HMb,SHDn,MHDn,NQPDHn,BtHn,TPBtHn,TPDn,Lnkn,Lenn,AngDn,Wtn,Jncn,Conn,SGLHn,MGLHn,SCFn,MCFn,DivHn,HullAn,HullPn,HullRn,HullBn,HullSIn,PrbWn,PrbEn
+created output buffer size float * 32
+
+OUTPUT DATA:
+Line Connectivity                  4  4  2  2
+Line Length                        12  18  100  100
+Link Fraction                      1  1  1  1
+Line Ang Curvature                 810  270  0  0
+Line Sinuosity                     2.05798  3.08697  1  1
+Line Bearing                       120.964  120.964  0  90
+Hybrid Metric fwd                  1  2  1  1
+Hybrid Metric bwd                  1  2  1  1
+Sum Hybrid Dist Rn                 3.83333  5.16667  4.83333  4.83333
+Mean Hybrid Dist Rn                0.958333  1.29167  1.20833  1.20833
+NetQuantPD Hybrid Rn               5.66667  3.5  5.16667  5.16667
+Betweenness Hybrid Rn              5.33333  3.33333  3.33333  3.33333
+TPBetweenness Hybrid Rn            1.33333  0.833333  0.833333  0.833333
+TPDestination Rn                   1  1  1  1
+Links Rn                           4  4  4  4
+Length Rn                          230  230  230  230
+Ang Dist Rn                        1080  1080  1080  1080
+Weight Rn                          4  4  4  4
+Junctions Rn                       2  2  2  2
+Connectivity Rn                    6  6  6  6
+SumGeoLen Hybrid Rn                131  139  260.333  260.333
+MeanGeoLen Hybrid Rn               32.75  34.75  65.0833  65.0833
+Sum Crow Flight Rn                 114.272  106.125  212.556  208.821
+Mean Crow Flight Rn                28.5679  26.5313  53.139  52.2053
+Diversion Ratio Hybrid Rn          1.56273  1.89715  1.17595  1.20066
+Convex Hull Area Rn                5407.5  5407.5  5407.5  5407.5
+Convex Hull Perimeter Rn           355.085  355.085  355.085  355.085
+Convex Hull Max Radius Rn          103.005  100.404  117.618  116.765
+Convex Hull Bearing Rn             90.5563  354.857  116.783  331.899
+Convex Hull Shape Index Rn         1.85549  1.85549  1.85549  1.85549
+Problem route weight Rn            0  0  0  0
+Problem route excess Rn            0  0  0  0
+
+
+destroying
+done
+
+
+
+
+Global Radius Only Test, Hybrid analysis, cont space
+WARNING: custommetric was supplied but is not being used
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=n;metric=HYBRID;cont=True;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=1,(FULLeuc!=0)?euc/FULLeuc*custom_cost:custom_cost;
+expected names net only: ['start_gs', 'end_gs', 'weight', 'custom_cost']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+R1.79769e+308 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,0.5,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R1.79769e+308 cost from link 10-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-12 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 10 radius 1.79769e+308
+      R1.79769e+308 cost from link 10-13 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 10 radius 1.79769e+308
+adding origin points to hull for link 10
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 10-12 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 10-13 is 56
+crow flies distance is 53.0094
+R1.79769e+308 origin 11   (linkid 1)
+     analytical costs per edge: 1,1,0,0,1,-,1,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R1.79769e+308 cost from link 11-10 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-12 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 11 radius 1.79769e+308
+      R1.79769e+308 cost from link 11-13 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 11 radius 1.79769e+308
+adding origin points to hull for link 11
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 11-12 is 59
+crow flies distance is 50.8035
+euclidean geodesic from link 11-13 is 59
+crow flies distance is 46.0977
+R1.79769e+308 origin 12   (linkid 2)
+     analytical costs per edge: 0.5,2.5,0.5,1.5,0,0,1.5,-,
+     analytical backlinks per edge: 5,2,5,0,-,-,0,-,
+      R1.79769e+308 cost from link 12-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 12 radius 1.79769e+308
+      R1.79769e+308 cost from link 12-13 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 12 radius 1.79769e+308
+adding origin points to hull for link 12
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 12-11 is 59
+crow flies distance is 50.8035
+      R1.79769e+308 cost from link 12-13 adds 1 to betweenness of link 10(edge 0) with prop 1 weight 1
+euclidean geodesic from link 12-13 is 112
+crow flies distance is 76.3806
+R1.79769e+308 origin 13   (linkid 3)
+     analytical costs per edge: 2.5,0.5,1.5,0.5,1.5,-,0,0,
+     analytical backlinks per edge: 3,7,1,7,1,-,-,-,
+      R1.79769e+308 cost from link 13-10 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-11 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 13 radius 1.79769e+308
+      R1.79769e+308 cost from link 13-12 adds 2 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 13 radius 1.79769e+308
+adding origin points to hull for link 13
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+euclidean geodesic from link 13-11 is 59
+crow flies distance is 46.0977
+      R1.79769e+308 cost from link 13-12 adds 1 to betweenness of link 10(edge 1) with prop 1 weight 1
+euclidean geodesic from link 13-12 is 112
+crow flies distance is 76.3806
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,HMf,HMb,SHDnc,MHDnc,NQPDHnc,BtHnc,TPBtHnc,TPDnc,Lnknc,Lennc,AngDnc,Wtnc,Jncnc,Connc,SGLHnc,MGLHnc,SCFnc,MCFnc,DivHnc,HullAnc,HullPnc,HullRnc,HullBnc,HullSInc,PrbWnc,PrbEnc
+created output buffer size float * 32
+
+OUTPUT DATA:
+Line Connectivity                  4  4  2  2
+Line Length                        12  18  100  100
+Link Fraction                      1  1  1  1
+Line Ang Curvature                 810  270  0  0
+Line Sinuosity                     2.05798  3.08697  1  1
+Line Bearing                       120.964  120.964  0  90
+Hybrid Metric fwd                  1  2  1  1
+Hybrid Metric bwd                  1  2  1  1
+Sum Hybrid Dist Rnc                3.83333  5.16667  4.83333  4.83333
+Mean Hybrid Dist Rnc               0.958333  1.29167  1.20833  1.20833
+NetQuantPD Hybrid Rnc              5.66667  3.5  5.16667  5.16667
+Betweenness Hybrid Rnc             5.33333  3.33333  3.33333  3.33333
+TPBetweenness Hybrid Rnc           1.33333  0.833333  0.833333  0.833333
+TPDestination Rnc                  1  1  1  1
+Links Rnc                          4  4  4  4
+Length Rnc                         230  230  230  230
+Ang Dist Rnc                       1080  1080  1080  1080
+Weight Rnc                         4  4  4  4
+Junctions Rnc                      2  2  2  2
+Connectivity Rnc                   6  6  6  6
+SumGeoLen Hybrid Rnc               131  139  260.333  260.333
+MeanGeoLen Hybrid Rnc              32.75  34.75  65.0833  65.0833
+Sum Crow Flight Rnc                114.272  106.125  212.556  208.821
+Mean Crow Flight Rnc               28.5679  26.5313  53.139  52.2053
+Diversion Ratio Hybrid Rnc         1.56273  1.89715  1.17595  1.20066
+Convex Hull Area Rnc               5407.5  5407.5  5407.5  5407.5
+Convex Hull Perimeter Rnc          355.085  355.085  355.085  355.085
+Convex Hull Max Radius Rnc         103.005  100.404  117.618  116.765
+Convex Hull Bearing Rnc            90.5563  354.857  116.783  331.899
+Convex Hull Shape Index Rnc        1.85549  1.85549  1.85549  1.85549
+Problem route weight Rnc           0  0  0  0
+Problem route excess Rnc           0  0  0  0
+
+
+destroying
+done
+
+
+Global Radius Only Test, Hybrid analysis, negative formula
+WARNING: custommetric was supplied but is not being used
+WARNING: ignorenonlinear is in use, and the link formula doesn't look linear.
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=n;metric=HYBRID;cont=False;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=-1;
+expected names net only: ['start_gs', 'end_gs', 'weight']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+ERROR: Formula evaluation gave negative result for link 10
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+destroying
+done
+
+
 Nasty link test
 Using default of angular link centres for angular analysis
 Using xytolerance=0, ztolerance=0
@@ -17842,6 +19482,1101 @@ Convex Hull Bearing Rnc            0  180  180
 Convex Hull Shape Index Rnc        inf  inf  inf
 Problem route weight Rnc           0  0  0
 Problem route excess Rnc           0  0  0
+
+
+destroying
+done
+
+
+Zero length link test, Hybrid analysis, discrete space
+WARNING: custommetric was supplied but is not being used
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=n;metric=HYBRID;cont=False;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=1,(FULLeuc!=0)?euc/FULLeuc*custom_cost:custom_cost;
+expected names net only: ['start_gs', 'end_gs', 'weight', 'custom_cost']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+WARNING: Polyline 2 is too short to generate valid turn angles.
+WARNING: Polyline 2 has near zero length
+WARNING: Zero length links can lead to unpredictable results;
+WARNING: recommended practice is to remove them using sDNA Prepare.
+Running sDNA Integral calculation...
+R1.79769e+308 origin 1   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,
+     analytical backlinks per edge: -,-,0,0,0,-,
+      R1.79769e+308 cost from link 1-2 adds 1.5 to closeness with prop 1 weight -1.#IND
+     adding points from edge 2 to hull of link 1 radius 1.79769e+308
+      R1.79769e+308 cost from link 1-3 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 1 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,1,0)(0,1,0)(0,1,0)
+     unpacking partial points from end of edge 4
+     (0,1,0)(0,1.5,0)(0,2,0)
+     unpacking partial points from middle of edge 1
+     (0,0.5,0)(0,0,0)
+     unpacking partial points from middle of edge 0
+     (0,0.5,0)(0,1,0)
+euclidean geodesic from link 1-2 is 0.5
+crow flies distance is 0.5
+euclidean geodesic from link 1-3 is 1
+crow flies distance is 1
+R1.79769e+308 origin 2   (linkid 1)
+     analytical costs per edge: -,1,0,0,1,-,
+     analytical backlinks per edge: -,2,-,-,2,-,
+      R1.79769e+308 cost from link 2-1 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 2 radius 1.79769e+308
+      R1.79769e+308 cost from link 2-3 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 2 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (0,1,0)(0,0.5,0)(0,0,0)
+     unpacking partial points from end of edge 4
+     (0,1,0)(0,1.5,0)(0,2,0)
+     unpacking partial points from middle of edge 3
+     (0,1,0)(0,1,0)
+     unpacking partial points from middle of edge 2
+     (0,1,0)(0,1,0)
+euclidean geodesic from link 2-1 is 0.5
+crow flies distance is 0.5
+euclidean geodesic from link 2-3 is 0.5
+crow flies distance is 0.5
+R1.79769e+308 origin 3   (linkid 2)
+     analytical costs per edge: -,0.5,0.5,0.5,0,0,
+     analytical backlinks per edge: -,5,5,5,-,-,
+      R1.79769e+308 cost from link 3-1 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 3 radius 1.79769e+308
+      R1.79769e+308 cost from link 3-2 adds 1.5 to closeness with prop 1 weight -1.#IND
+     adding points from edge 2 to hull of link 3 radius 1.79769e+308
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (0,1,0)(0,0.5,0)(0,0,0)
+     unpacking partial points from end of edge 2
+     (0,1,0)(0,1,0)(0,1,0)
+     unpacking partial points from middle of edge 5
+     (0,1.5,0)(0,1,0)
+     unpacking partial points from middle of edge 4
+     (0,1.5,0)(0,2,0)
+euclidean geodesic from link 3-1 is 1
+crow flies distance is 1
+euclidean geodesic from link 3-2 is 0.5
+crow flies distance is 0.5
+Polyline 1 id=0
+    Points: (0,0) (0,1) 
+    edge 0 (s1+), conn: 2(€ang90) 3(€ang90) 4(€ang0) 
+    edge 1 (s1-), conn: 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 2 id=1
+    Points: (0,1) (0,1) 
+    edge 2 (s2+), conn: 1(€ang90) 4(€ang90) 
+    edge 3 (s2-), conn: 1(€ang90) 4(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 3 id=2
+    Points: (0,1) (0,2) 
+    edge 4 (s3+), conn: 
+    edge 5 (s3-), conn: 1(€ang0) 2(€ang90) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,HMf,HMb,SHDn,MHDn,NQPDHn,BtHn,TPBtHn,TPDn,Lnkn,Lenn,AngDn,Wtn,Jncn,Conn,SGLHn,MGLHn,SCFn,MCFn,DivHn,HullAn,HullPn,HullRn,HullBn,HullSIn,PrbWn,PrbEn
+created output buffer size float * 32
+
+OUTPUT DATA:
+Line Connectivity                  3  2  3
+Line Length                        1  0  1
+Link Fraction                      1  nan  1
+Line Ang Curvature                 0  0  0
+Line Sinuosity                     1  nan  1
+Line Bearing                       0  inf  0
+Hybrid Metric fwd                  1  1  1
+Hybrid Metric bwd                  1  1  1
+Sum Hybrid Dist Rn                 nan  nan  nan
+Mean Hybrid Dist Rn                nan  nan  nan
+NetQuantPD Hybrid Rn               nan  nan  nan
+Betweenness Hybrid Rn              nan  nan  nan
+TPBetweenness Hybrid Rn            nan  nan  nan
+TPDestination Rn                   nan  nan  nan
+Links Rn                           3  3  3
+Length Rn                          2  2  2
+Ang Dist Rn                        0  0  0
+Weight Rn                          nan  nan  nan
+Junctions Rn                       1  1  1
+Connectivity Rn                    4  4  4
+SumGeoLen Hybrid Rn                nan  nan  nan
+MeanGeoLen Hybrid Rn               nan  nan  nan
+Sum Crow Flight Rn                 nan  nan  nan
+Mean Crow Flight Rn                nan  nan  nan
+Diversion Ratio Hybrid Rn          nan  nan  nan
+Convex Hull Area Rn                0  0  0
+Convex Hull Perimeter Rn           4  4  4
+Convex Hull Max Radius Rn          1.5  1  1.5
+Convex Hull Bearing Rn             0  180  180
+Convex Hull Shape Index Rn         inf  inf  inf
+Problem route weight Rn            0  0  0
+Problem route excess Rn            0  0  0
+
+
+destroying
+done
+
+
+
+
+Zero length link test, Hybrid analysis, cont space
+WARNING: custommetric was supplied but is not being used
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=n;metric=HYBRID;cont=True;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=1,(FULLeuc!=0)?euc/FULLeuc*custom_cost:custom_cost;
+expected names net only: ['start_gs', 'end_gs', 'weight', 'custom_cost']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+WARNING: Polyline 2 is too short to generate valid turn angles.
+WARNING: Polyline 2 has near zero length
+WARNING: Zero length links can lead to unpredictable results;
+WARNING: recommended practice is to remove them using sDNA Prepare.
+Running sDNA Integral calculation...
+R1.79769e+308 origin 1   (linkid 0)
+     analytical costs per edge: 0,0,0.5,0.5,0.5,-,
+     analytical backlinks per edge: -,-,0,0,0,-,
+      R1.79769e+308 cost from link 1-2 adds 1.5 to closeness with prop 1 weight -1.#IND
+     adding points from edge 2 to hull of link 1 radius 1.79769e+308
+      R1.79769e+308 cost from link 1-3 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 1 radius 1.79769e+308
+adding origin points to hull for link 1
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,1,0)(0,1,0)(0,1,0)
+     unpacking partial points from end of edge 4
+     (0,1,0)(0,1.5,0)(0,2,0)
+     unpacking partial points from middle of edge 1
+     (0,0.5,0)(0,0,0)
+     unpacking partial points from middle of edge 0
+     (0,0.5,0)(0,1,0)
+euclidean geodesic from link 1-2 is 0.5
+crow flies distance is 0.5
+euclidean geodesic from link 1-3 is 1
+crow flies distance is 1
+R1.79769e+308 origin 2   (linkid 1)
+     analytical costs per edge: -,1,0,0,1,-,
+     analytical backlinks per edge: -,2,-,-,2,-,
+      R1.79769e+308 cost from link 2-1 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 2 radius 1.79769e+308
+      R1.79769e+308 cost from link 2-3 adds 1.5 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 2 radius 1.79769e+308
+adding origin points to hull for link 2
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (0,1,0)(0,0.5,0)(0,0,0)
+     unpacking partial points from end of edge 4
+     (0,1,0)(0,1.5,0)(0,2,0)
+     unpacking partial points from middle of edge 3
+     (0,1,0)(0,1,0)
+     unpacking partial points from middle of edge 2
+     (0,1,0)(0,1,0)
+euclidean geodesic from link 2-1 is 0.5
+crow flies distance is 0.5
+euclidean geodesic from link 2-3 is 0.5
+crow flies distance is 0.5
+R1.79769e+308 origin 3   (linkid 2)
+     analytical costs per edge: -,0.5,0.5,0.5,0,0,
+     analytical backlinks per edge: -,5,5,5,-,-,
+      R1.79769e+308 cost from link 3-1 adds 1 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 3 radius 1.79769e+308
+      R1.79769e+308 cost from link 3-2 adds 1.5 to closeness with prop 1 weight -1.#IND
+     adding points from edge 2 to hull of link 3 radius 1.79769e+308
+adding origin points to hull for link 3
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (0,1,0)(0,0.5,0)(0,0,0)
+     unpacking partial points from end of edge 2
+     (0,1,0)(0,1,0)(0,1,0)
+     unpacking partial points from middle of edge 5
+     (0,1.5,0)(0,1,0)
+     unpacking partial points from middle of edge 4
+     (0,1.5,0)(0,2,0)
+euclidean geodesic from link 3-1 is 1
+crow flies distance is 1
+euclidean geodesic from link 3-2 is 0.5
+crow flies distance is 0.5
+Polyline 1 id=0
+    Points: (0,0) (0,1) 
+    edge 0 (s1+), conn: 2(€ang90) 3(€ang90) 4(€ang0) 
+    edge 1 (s1-), conn: 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 2 id=1
+    Points: (0,1) (0,1) 
+    edge 2 (s2+), conn: 1(€ang90) 4(€ang90) 
+    edge 3 (s2-), conn: 1(€ang90) 4(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 3 id=2
+    Points: (0,1) (0,2) 
+    edge 4 (s3+), conn: 
+    edge 5 (s3-), conn: 1(€ang0) 2(€ang90) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,HMf,HMb,SHDnc,MHDnc,NQPDHnc,BtHnc,TPBtHnc,TPDnc,Lnknc,Lennc,AngDnc,Wtnc,Jncnc,Connc,SGLHnc,MGLHnc,SCFnc,MCFnc,DivHnc,HullAnc,HullPnc,HullRnc,HullBnc,HullSInc,PrbWnc,PrbEnc
+created output buffer size float * 32
+
+OUTPUT DATA:
+Line Connectivity                  3  2  3
+Line Length                        1  0  1
+Link Fraction                      1  nan  1
+Line Ang Curvature                 0  0  0
+Line Sinuosity                     1  nan  1
+Line Bearing                       0  inf  0
+Hybrid Metric fwd                  1  1  1
+Hybrid Metric bwd                  1  1  1
+Sum Hybrid Dist Rnc                nan  nan  nan
+Mean Hybrid Dist Rnc               nan  nan  nan
+NetQuantPD Hybrid Rnc              nan  nan  nan
+Betweenness Hybrid Rnc             nan  nan  nan
+TPBetweenness Hybrid Rnc           nan  nan  nan
+TPDestination Rnc                  nan  nan  nan
+Links Rnc                          3  3  3
+Length Rnc                         2  2  2
+Ang Dist Rnc                       0  0  0
+Weight Rnc                         nan  nan  nan
+Junctions Rnc                      1  1  1
+Connectivity Rnc                   4  4  4
+SumGeoLen Hybrid Rnc               nan  nan  nan
+MeanGeoLen Hybrid Rnc              nan  nan  nan
+Sum Crow Flight Rnc                nan  nan  nan
+Mean Crow Flight Rnc               nan  nan  nan
+Diversion Ratio Hybrid Rnc         nan  nan  nan
+Convex Hull Area Rnc               0  0  0
+Convex Hull Perimeter Rnc          4  4  4
+Convex Hull Max Radius Rnc         1.5  1  1.5
+Convex Hull Bearing Rnc            0  180  180
+Convex Hull Shape Index Rnc        inf  inf  inf
+Problem route weight Rnc           0  0  0
+Problem route excess Rnc           0  0  0
+
+
+destroying
+done
+
+
+Zero length link test, Hybrid analysis, negative formula
+WARNING: custommetric was supplied but is not being used
+WARNING: ignorenonlinear is in use, and the link formula doesn't look linear.
+Using default of euclidean link centres for hybrid analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=n;metric=HYBRID;cont=False;custommetric=custom_cost;weight_type=link;ignorenonlinear;lineformula=-1;
+expected names net only: ['start_gs', 'end_gs', 'weight']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+WARNING: Polyline 2 is too short to generate valid turn angles.
+WARNING: Polyline 2 has near zero length
+WARNING: Zero length links can lead to unpredictable results;
+WARNING: recommended practice is to remove them using sDNA Prepare.
+Running sDNA Integral calculation...
+ERROR: Formula evaluation gave negative result for link 1
+Polyline 1 id=0
+    Points: (0,0) (0,1) 
+    edge 0 (s1+), conn: 2(€ang90) 3(€ang90) 4(€ang0) 
+    edge 1 (s1-), conn: 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 2 id=1
+    Points: (0,1) (0,1) 
+    edge 2 (s2+), conn: 1(€ang90) 4(€ang90) 
+    edge 3 (s2-), conn: 1(€ang90) 4(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 3 id=2
+    Points: (0,1) (0,2) 
+    edge 4 (s3+), conn: 
+    edge 5 (s3-), conn: 1(€ang0) 2(€ang90) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+destroying
+done
+
+
+Hybrid radius euc comparison
+Using default of euclidean link centres for euclidean analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=5,6,10,50,63;metric=EUCLIDEAN;cont=False;weight_type=link;ignorenonlinear;radmetric=hybrid;radlineformula=euc
+expected names net only: ['start_gs', 'end_gs', 'weight']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+R5 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R6 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R10 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,6,6,6,-,6,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R50 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,6,6,6,-,6,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R50 cost from link 10-11 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 50
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+R63 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,6,6,6,-,6,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R63 cost from link 10-11 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 63
+      R63 cost from link 10-12 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 10 radius 63
+      R63 cost from link 10-13 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 10 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 10-12 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 10-13 is 56
+crow flies distance is 53.0094
+R5 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R6 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R10 origin 11   (linkid 1)
+     analytical costs per edge: 9,9,0,0,9,-,9,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R50 origin 11   (linkid 1)
+     analytical costs per edge: 9,9,0,0,9,-,9,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R50 cost from link 11-10 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 50
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+R63 origin 11   (linkid 1)
+     analytical costs per edge: 9,9,0,0,9,-,9,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R63 cost from link 11-10 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 63
+      R63 cost from link 11-12 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 11 radius 63
+      R63 cost from link 11-13 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 11 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 11-12 is 59
+crow flies distance is 50.8035
+euclidean geodesic from link 11-13 is 59
+crow flies distance is 46.0977
+R5 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R6 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R10 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R50 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R63 origin 12   (linkid 2)
+     analytical costs per edge: 50,-,50,62,0,0,62,-,
+     analytical backlinks per edge: 5,-,5,0,-,-,0,-,
+      R63 cost from link 12-10 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 63
+      R63 cost from link 12-11 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 12 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 12-11 is 59
+crow flies distance is 50.8035
+R5 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R6 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R10 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R50 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R63 origin 13   (linkid 3)
+     analytical costs per edge: -,50,62,50,62,-,0,0,
+     analytical backlinks per edge: -,7,1,7,1,-,-,-,
+      R63 cost from link 13-10 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 13 radius 63
+      R63 cost from link 13-11 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 3 to hull of link 13 radius 63
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (5,0,0)(4,0,0)(4,1,0)(3,1,0)(3,0,0)(2,0,0)(2,1,0)(2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from end of edge 3
+     (5,0,0)(5,2,0)(10,2,0)(10,3,0)(9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+euclidean geodesic from link 13-11 is 59
+crow flies distance is 46.0977
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,SED5,MED5,NQPDE5,BtE5,TPBtE5,TPD5,Lnk5,Len5,AngD5,Wt5,Jnc5,Con5,SGLE5,MGLE5,SCF5,MCF5,DivE5,HullA5,HullP5,HullR5,HullB5,HullSI5,PrbW5,PrbE5,SED6,MED6,NQPDE6,BtE6,TPBtE6,TPD6,Lnk6,Len6,AngD6,Wt6,Jnc6,Con6,SGLE6,MGLE6,SCF6,MCF6,DivE6,HullA6,HullP6,HullR6,HullB6,HullSI6,PrbW6,PrbE6,SED10,MED10,NQPDE10,BtE10,TPBtE10,TPD10,Lnk10,Len10,AngD10,Wt10,Jnc10,Con10,SGLE10,MGLE10,SCF10,MCF10,DivE10,HullA10,HullP10,HullR10,HullB10,HullSI10,PrbW10,PrbE10,SED50,MED50,NQPDE50,BtE50,TPBtE50,TPD50,Lnk50,Len50,AngD50,Wt50,Jnc50,Con50,SGLE50,MGLE50,SCF50,MCF50,DivE50,HullA50,HullP50,HullR50,HullB50,HullSI50,PrbW50,PrbE50,SED63,MED63,NQPDE63,BtE63,TPBtE63,TPD63,Lnk63,Len63,AngD63,Wt63,Jnc63,Con63,SGLE63,MGLE63,SCF63,MCF63,DivE63,HullA63,HullP63,HullR63,HullB63,HullSI63,PrbW63,PrbE63
+created output buffer size float * 126
+
+OUTPUT DATA:
+Line Connectivity                  4  4  2  2
+Line Length                        12  18  100  100
+Link Fraction                      1  1  1  1
+Line Ang Curvature                 810  270  0  0
+Line Sinuosity                     2.05798  3.08697  1  1
+Line Bearing                       120.964  120.964  0  90
+Sum Euc Dist R5                    4  6  33.3333  33.3333
+Mean Euc Dist R5                   4  6  33.3333  33.3333
+NetQuantPD Euc R5                  0.25  0.166667  0.03  0.03
+Betweenness Euc R5                 0.333333  0.333333  0.333333  0.333333
+TPBetweenness Euc R5               0.333333  0.333333  0.333333  0.333333
+TPDestination R5                   1  1  1  1
+Links R5                           1  1  1  1
+Length R5                          12  18  100  100
+Ang Dist R5                        810  270  0  0
+Weight R5                          1  1  1  1
+Junctions R5                       0  0  0  0
+Connectivity R5                    0  0  0  0
+SumGeoLen Euc R5                   4  6  33.3333  33.3333
+MeanGeoLen Euc R5                  4  6  33.3333  33.3333
+Sum Crow Flight R5                 1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R5                1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Euc R5             2.05798  3.08697  1  1
+Convex Hull Area R5                8.5  17.5  0  0
+Convex Hull Perimeter R5           13.8863  22.2161  200  200
+Convex Hull Max Radius R5          3.16228  9  50  50
+Convex Hull Bearing R5             108.435  270  180  270
+Convex Hull Shape Index R5         1.80529  2.24434  inf  inf
+Problem route weight R5            0  0  0  0
+Problem route excess R5            0  0  0  0
+Sum Euc Dist R6                    4  6  33.3333  33.3333
+Mean Euc Dist R6                   4  6  33.3333  33.3333
+NetQuantPD Euc R6                  0.25  0.166667  0.03  0.03
+Betweenness Euc R6                 0.333333  0.333333  0.333333  0.333333
+TPBetweenness Euc R6               0.333333  0.333333  0.333333  0.333333
+TPDestination R6                   1  1  1  1
+Links R6                           1  1  1  1
+Length R6                          12  18  100  100
+Ang Dist R6                        810  270  0  0
+Weight R6                          1  1  1  1
+Junctions R6                       2  0  0  0
+Connectivity R6                    6  0  0  0
+SumGeoLen Euc R6                   4  6  33.3333  33.3333
+MeanGeoLen Euc R6                  4  6  33.3333  33.3333
+Sum Crow Flight R6                 1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R6                1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Euc R6             2.05798  3.08697  1  1
+Convex Hull Area R6                8.5  17.5  0  0
+Convex Hull Perimeter R6           13.8863  22.2161  200  200
+Convex Hull Max Radius R6          3.16228  9  50  50
+Convex Hull Bearing R6             108.435  270  180  270
+Convex Hull Shape Index R6         1.80529  2.24434  inf  inf
+Problem route weight R6            0  0  0  0
+Problem route excess R6            0  0  0  0
+Sum Euc Dist R10                   4  6  33.3333  33.3333
+Mean Euc Dist R10                  4  6  33.3333  33.3333
+NetQuantPD Euc R10                 0.25  0.166667  0.03  0.03
+Betweenness Euc R10                0.333333  0.333333  0.333333  0.333333
+TPBetweenness Euc R10              0.333333  0.333333  0.333333  0.333333
+TPDestination R10                  1  1  1  1
+Links R10                          1  1  1  1
+Length R10                         12  18  100  100
+Ang Dist R10                       810  270  0  0
+Weight R10                         1  1  1  1
+Junctions R10                      2  2  0  0
+Connectivity R10                   6  6  0  0
+SumGeoLen Euc R10                  4  6  33.3333  33.3333
+MeanGeoLen Euc R10                 4  6  33.3333  33.3333
+Sum Crow Flight R10                1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R10               1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Euc R10            2.05798  3.08697  1  1
+Convex Hull Area R10               8.5  17.5  0  0
+Convex Hull Perimeter R10          13.8863  22.2161  200  200
+Convex Hull Max Radius R10         3.16228  9  50  50
+Convex Hull Bearing R10            108.435  270  180  270
+Convex Hull Shape Index R10        1.80529  2.24434  inf  inf
+Problem route weight R10           0  0  0  0
+Problem route excess R10           0  0  0  0
+Sum Euc Dist R50                   19  21  33.3333  33.3333
+Mean Euc Dist R50                  9.5  10.5  33.3333  33.3333
+NetQuantPD Euc R50                 0.316667  0.233333  0.03  0.03
+Betweenness Euc R50                1.33333  1.33333  0.333333  0.333333
+TPBetweenness Euc R50              0.666667  0.666667  0.333333  0.333333
+TPDestination R50                  1  1  1  1
+Links R50                          2  2  1  1
+Length R50                         30  30  100  100
+Ang Dist R50                       1080  1080  0  0
+Weight R50                         2  2  1  1
+Junctions R50                      2  2  1  1
+Connectivity R50                   6  6  3  3
+SumGeoLen Euc R50                  19  21  33.3333  33.3333
+MeanGeoLen Euc R50                 9.5  10.5  33.3333  33.3333
+Sum Crow Flight R50                9.22376  9.22376  33.3333  33.3333
+Mean Crow Flight R50               4.61188  4.61188  33.3333  33.3333
+Diversion Ratio Euc R50            2.0592  2.57369  1  1
+Convex Hull Area R50               25  25  0  0
+Convex Hull Perimeter R50          24.3852  24.3852  200  200
+Convex Hull Max Radius R50         8.24621  9.48683  50  50
+Convex Hull Bearing R50            75.9638  251.565  180  270
+Convex Hull Shape Index R50        1.89279  1.89279  inf  inf
+Problem route weight R50           0  0  0  0
+Problem route excess R50           0  0  0  0
+Sum Euc Dist R63                   131  139  148.333  148.333
+Mean Euc Dist R63                  32.75  34.75  49.4444  49.4444
+NetQuantPD Euc R63                 0.352381  0.267232  0.0648063  0.0648063
+Betweenness Euc R63                3.33333  3.33333  2.33333  2.33333
+TPBetweenness Euc R63              0.916667  0.916667  0.694444  0.694444
+TPDestination R63                  1.16667  1.16667  0.833333  0.833333
+Links R63                          4  4  3  3
+Length R63                         230  230  130  130
+Ang Dist R63                       1080  1080  1080  1080
+Weight R63                         4  4  3  3
+Junctions R63                      2  2  2  2
+Connectivity R63                   6  6  6  6
+SumGeoLen Euc R63                  131  139  148.333  148.333
+MeanGeoLen Euc R63                 32.75  34.75  49.4444  49.4444
+Sum Crow Flight R63                114.272  106.125  136.175  132.44
+Mean Crow Flight R63               28.5679  26.5313  45.3918  44.1468
+Diversion Ratio Euc R63            1.56273  1.89715  1.07915  1.1121
+Convex Hull Area R63               5407.5  5407.5  525  172.5
+Convex Hull Perimeter R63          355.085  355.085  214.884  213.047
+Convex Hull Max Radius R63         103.005  100.404  53.2353  55.0818
+Convex Hull Bearing R63            90.5563  354.857  174.611  273.122
+Convex Hull Shape Index R63        1.85549  1.85549  6.99904  20.9389
+Problem route weight R63           0  0  0  0
+Problem route excess R63           0  0  0  0
+
+
+destroying
+done
+
+
+Hybrid radius
+Using default of euclidean link centres for euclidean analysis
+Using xytolerance=0, ztolerance=0
+calc created with config start_gs=start_gs;end_gs=end_gs;weight=weight;probroutes;outputsums;radii=10,12,20,100,126;metric=EUCLIDEAN;cont=False;weight_type=link;ignorenonlinear;radmetric=hybrid;radlineformula=2*euc
+expected names net only: ['start_gs', 'end_gs', 'weight']
+sDNA is running in 64-bit mode
+Building network and checking for tolerance errors...
+Running sDNA Integral calculation...
+R10 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R12 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,-,-,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R20 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,6,6,6,-,6,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+R100 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,6,6,6,-,6,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R100 cost from link 10-11 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 100
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+R126 origin 10   (linkid 0)
+     analytical costs per edge: 0,0,6,6,6,-,6,-,
+     analytical backlinks per edge: -,-,1,0,1,-,0,-,
+      R126 cost from link 10-11 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 10 radius 126
+      R126 cost from link 10-12 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 10 radius 126
+      R126 cost from link 10-13 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 10 radius 126
+     unpacking radius geometry
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 1
+     (2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from middle of edge 0
+     (2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+euclidean geodesic from link 10-11 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 10-12 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 10-13 is 56
+crow flies distance is 53.0094
+R10 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R12 origin 11   (linkid 1)
+     analytical costs per edge: -,-,0,0,-,-,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R20 origin 11   (linkid 1)
+     analytical costs per edge: 9,9,0,0,9,-,9,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+R100 origin 11   (linkid 1)
+     analytical costs per edge: 9,9,0,0,9,-,9,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R100 cost from link 11-10 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 100
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+R126 origin 11   (linkid 1)
+     analytical costs per edge: 9,9,0,0,9,-,9,-,
+     analytical backlinks per edge: 3,2,-,-,3,-,2,-,
+      R126 cost from link 11-10 adds 15 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 11 radius 126
+      R126 cost from link 11-12 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 4 to hull of link 11 radius 126
+      R126 cost from link 11-13 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 6 to hull of link 11 radius 126
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 4
+     (0,3,0)(0,53,0)(0,103,0)
+     unpacking partial points from end of edge 6
+     (5,0,0)(55,0,0)(105,0,0)
+     unpacking partial points from middle of edge 3
+     (9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 2
+     (9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+euclidean geodesic from link 11-10 is 15
+crow flies distance is 7.28011
+euclidean geodesic from link 11-12 is 59
+crow flies distance is 50.8035
+euclidean geodesic from link 11-13 is 59
+crow flies distance is 46.0977
+R10 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R12 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R20 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R100 origin 12   (linkid 2)
+     analytical costs per edge: -,-,-,-,0,0,-,-,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+R126 origin 12   (linkid 2)
+     analytical costs per edge: 50,-,50,62,0,0,62,-,
+     analytical backlinks per edge: 5,-,5,0,-,-,0,-,
+      R126 cost from link 12-10 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 0 to hull of link 12 radius 126
+      R126 cost from link 12-11 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 2 to hull of link 12 radius 126
+     unpacking radius geometry
+     unpacking partial points from end of edge 0
+     (0,3,0)(0,0,0)(1,0,0)(1,1,0)(2,1,0)(2,1,0)(2,1,0)(2,0,0)(3,0,0)(3,1,0)(4,1,0)(4,0,0)(5,0,0)
+     unpacking partial points from end of edge 2
+     (0,3,0)(9,3,0)(10,3,0)(10,2,0)(5,2,0)(5,0,0)
+     unpacking partial points from middle of edge 5
+     (0,53,0)(0,3,0)
+     unpacking partial points from middle of edge 4
+     (0,53,0)(0,103,0)
+euclidean geodesic from link 12-10 is 56
+crow flies distance is 52.0384
+euclidean geodesic from link 12-11 is 59
+crow flies distance is 50.8035
+R10 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R12 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R20 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R100 origin 13   (linkid 3)
+     analytical costs per edge: -,-,-,-,-,-,0,0,
+     analytical backlinks per edge: -,-,-,-,-,-,-,-,
+     unpacking radius geometry
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+R126 origin 13   (linkid 3)
+     analytical costs per edge: -,50,62,50,62,-,0,0,
+     analytical backlinks per edge: -,7,1,7,1,-,-,-,
+      R126 cost from link 13-10 adds 56 to closeness with prop 1 weight 1
+     adding points from edge 1 to hull of link 13 radius 126
+      R126 cost from link 13-11 adds 59 to closeness with prop 1 weight 1
+     adding points from edge 3 to hull of link 13 radius 126
+     unpacking radius geometry
+     unpacking partial points from end of edge 1
+     (5,0,0)(4,0,0)(4,1,0)(3,1,0)(3,0,0)(2,0,0)(2,1,0)(2,1,0)(2,1,0)(1,1,0)(1,0,0)(0,0,0)(0,3,0)
+     unpacking partial points from end of edge 3
+     (5,0,0)(5,2,0)(10,2,0)(10,3,0)(9,3,0)(0,3,0)
+     unpacking partial points from middle of edge 7
+     (55,0,0)(5,0,0)
+     unpacking partial points from middle of edge 6
+     (55,0,0)(105,0,0)
+euclidean geodesic from link 13-10 is 56
+crow flies distance is 53.0094
+euclidean geodesic from link 13-11 is 59
+crow flies distance is 46.0977
+Polyline 10 id=0
+    Points: (0,3) (0,0) (1,0) (1,1) (2,1) (2,0) (3,0) (3,1) (4,1) (4,0) (5,0) 
+    edge 0 (s10+), conn: 3(€ang90) 6(€ang0) 
+    edge 1 (s10-), conn: 2(€ang90) 4(€ang0) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 11 id=1
+    Points: (0,3) (10,3) (10,2) (5,2) (5,0) 
+    edge 2 (s11+), conn: 1(€ang90) 6(€ang90) 
+    edge 3 (s11-), conn: 0(€ang90) 4(€ang90) 
+    custom_cost=2 end_gs=0 start_gs=0 weight=1 
+Polyline 12 id=2
+    Points: (0,3) (0,103) 
+    edge 4 (s12+), conn: 
+    edge 5 (s12-), conn: 0(€ang0) 2(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+Polyline 13 id=3
+    Points: (5,0) (105,0) 
+    edge 6 (s13+), conn: 
+    edge 7 (s13-), conn: 1(€ang0) 3(€ang90) 
+    custom_cost=1 end_gs=0 start_gs=0 weight=1 
+
+shortnames: LConn,LLen,LFrac,LAC,LSin,LBear,SED10,MED10,NQPDE10,BtE10,TPBtE10,TPD10,Lnk10,Len10,AngD10,Wt10,Jnc10,Con10,SGLE10,MGLE10,SCF10,MCF10,DivE10,HullA10,HullP10,HullR10,HullB10,HullSI10,PrbW10,PrbE10,SED12,MED12,NQPDE12,BtE12,TPBtE12,TPD12,Lnk12,Len12,AngD12,Wt12,Jnc12,Con12,SGLE12,MGLE12,SCF12,MCF12,DivE12,HullA12,HullP12,HullR12,HullB12,HullSI12,PrbW12,PrbE12,SED20,MED20,NQPDE20,BtE20,TPBtE20,TPD20,Lnk20,Len20,AngD20,Wt20,Jnc20,Con20,SGLE20,MGLE20,SCF20,MCF20,DivE20,HullA20,HullP20,HullR20,HullB20,HullSI20,PrbW20,PrbE20,SED100,MED100,NQPDE100,BtE100,TPBtE100,TPD100,Lnk100,Len100,AngD100,Wt100,Jnc100,Con100,SGLE100,MGLE100,SCF100,MCF100,DivE100,HullA100,HullP100,HullR100,HullB100,HullSI100,PrbW100,PrbE100,SED126,MED126,NQPDE126,BtE126,TPBtE126,TPD126,Lnk126,Len126,AngD126,Wt126,Jnc126,Con126,SGLE126,MGLE126,SCF126,MCF126,DivE126,HullA126,HullP126,HullR126,HullB126,HullSI126,PrbW126,PrbE126
+created output buffer size float * 126
+
+OUTPUT DATA:
+Line Connectivity                  4  4  2  2
+Line Length                        12  18  100  100
+Link Fraction                      1  1  1  1
+Line Ang Curvature                 810  270  0  0
+Line Sinuosity                     2.05798  3.08697  1  1
+Line Bearing                       120.964  120.964  0  90
+Sum Euc Dist R10                   4  6  33.3333  33.3333
+Mean Euc Dist R10                  4  6  33.3333  33.3333
+NetQuantPD Euc R10                 0.25  0.166667  0.03  0.03
+Betweenness Euc R10                0.333333  0.333333  0.333333  0.333333
+TPBetweenness Euc R10              0.333333  0.333333  0.333333  0.333333
+TPDestination R10                  1  1  1  1
+Links R10                          1  1  1  1
+Length R10                         12  18  100  100
+Ang Dist R10                       810  270  0  0
+Weight R10                         1  1  1  1
+Junctions R10                      0  0  0  0
+Connectivity R10                   0  0  0  0
+SumGeoLen Euc R10                  4  6  33.3333  33.3333
+MeanGeoLen Euc R10                 4  6  33.3333  33.3333
+Sum Crow Flight R10                1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R10               1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Euc R10            2.05798  3.08697  1  1
+Convex Hull Area R10               8.5  17.5  0  0
+Convex Hull Perimeter R10          13.8863  22.2161  200  200
+Convex Hull Max Radius R10         3.16228  9  50  50
+Convex Hull Bearing R10            108.435  270  180  270
+Convex Hull Shape Index R10        1.80529  2.24434  inf  inf
+Problem route weight R10           0  0  0  0
+Problem route excess R10           0  0  0  0
+Sum Euc Dist R12                   4  6  33.3333  33.3333
+Mean Euc Dist R12                  4  6  33.3333  33.3333
+NetQuantPD Euc R12                 0.25  0.166667  0.03  0.03
+Betweenness Euc R12                0.333333  0.333333  0.333333  0.333333
+TPBetweenness Euc R12              0.333333  0.333333  0.333333  0.333333
+TPDestination R12                  1  1  1  1
+Links R12                          1  1  1  1
+Length R12                         12  18  100  100
+Ang Dist R12                       810  270  0  0
+Weight R12                         1  1  1  1
+Junctions R12                      2  0  0  0
+Connectivity R12                   6  0  0  0
+SumGeoLen Euc R12                  4  6  33.3333  33.3333
+MeanGeoLen Euc R12                 4  6  33.3333  33.3333
+Sum Crow Flight R12                1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R12               1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Euc R12            2.05798  3.08697  1  1
+Convex Hull Area R12               8.5  17.5  0  0
+Convex Hull Perimeter R12          13.8863  22.2161  200  200
+Convex Hull Max Radius R12         3.16228  9  50  50
+Convex Hull Bearing R12            108.435  270  180  270
+Convex Hull Shape Index R12        1.80529  2.24434  inf  inf
+Problem route weight R12           0  0  0  0
+Problem route excess R12           0  0  0  0
+Sum Euc Dist R20                   4  6  33.3333  33.3333
+Mean Euc Dist R20                  4  6  33.3333  33.3333
+NetQuantPD Euc R20                 0.25  0.166667  0.03  0.03
+Betweenness Euc R20                0.333333  0.333333  0.333333  0.333333
+TPBetweenness Euc R20              0.333333  0.333333  0.333333  0.333333
+TPDestination R20                  1  1  1  1
+Links R20                          1  1  1  1
+Length R20                         12  18  100  100
+Ang Dist R20                       810  270  0  0
+Weight R20                         1  1  1  1
+Junctions R20                      2  2  0  0
+Connectivity R20                   6  6  0  0
+SumGeoLen Euc R20                  4  6  33.3333  33.3333
+MeanGeoLen Euc R20                 4  6  33.3333  33.3333
+Sum Crow Flight R20                1.94365  1.94365  33.3333  33.3333
+Mean Crow Flight R20               1.94365  1.94365  33.3333  33.3333
+Diversion Ratio Euc R20            2.05798  3.08697  1  1
+Convex Hull Area R20               8.5  17.5  0  0
+Convex Hull Perimeter R20          13.8863  22.2161  200  200
+Convex Hull Max Radius R20         3.16228  9  50  50
+Convex Hull Bearing R20            108.435  270  180  270
+Convex Hull Shape Index R20        1.80529  2.24434  inf  inf
+Problem route weight R20           0  0  0  0
+Problem route excess R20           0  0  0  0
+Sum Euc Dist R100                  19  21  33.3333  33.3333
+Mean Euc Dist R100                 9.5  10.5  33.3333  33.3333
+NetQuantPD Euc R100                0.316667  0.233333  0.03  0.03
+Betweenness Euc R100               1.33333  1.33333  0.333333  0.333333
+TPBetweenness Euc R100             0.666667  0.666667  0.333333  0.333333
+TPDestination R100                 1  1  1  1
+Links R100                         2  2  1  1
+Length R100                        30  30  100  100
+Ang Dist R100                      1080  1080  0  0
+Weight R100                        2  2  1  1
+Junctions R100                     2  2  1  1
+Connectivity R100                  6  6  3  3
+SumGeoLen Euc R100                 19  21  33.3333  33.3333
+MeanGeoLen Euc R100                9.5  10.5  33.3333  33.3333
+Sum Crow Flight R100               9.22376  9.22376  33.3333  33.3333
+Mean Crow Flight R100              4.61188  4.61188  33.3333  33.3333
+Diversion Ratio Euc R100           2.0592  2.57369  1  1
+Convex Hull Area R100              25  25  0  0
+Convex Hull Perimeter R100         24.3852  24.3852  200  200
+Convex Hull Max Radius R100        8.24621  9.48683  50  50
+Convex Hull Bearing R100           75.9638  251.565  180  270
+Convex Hull Shape Index R100       1.89279  1.89279  inf  inf
+Problem route weight R100          0  0  0  0
+Problem route excess R100          0  0  0  0
+Sum Euc Dist R126                  131  139  148.333  148.333
+Mean Euc Dist R126                 32.75  34.75  49.4444  49.4444
+NetQuantPD Euc R126                0.352381  0.267232  0.0648063  0.0648063
+Betweenness Euc R126               3.33333  3.33333  2.33333  2.33333
+TPBetweenness Euc R126             0.916667  0.916667  0.694444  0.694444
+TPDestination R126                 1.16667  1.16667  0.833333  0.833333
+Links R126                         4  4  3  3
+Length R126                        230  230  130  130
+Ang Dist R126                      1080  1080  1080  1080
+Weight R126                        4  4  3  3
+Junctions R126                     2  2  2  2
+Connectivity R126                  6  6  6  6
+SumGeoLen Euc R126                 131  139  148.333  148.333
+MeanGeoLen Euc R126                32.75  34.75  49.4444  49.4444
+Sum Crow Flight R126               114.272  106.125  136.175  132.44
+Mean Crow Flight R126              28.5679  26.5313  45.3918  44.1468
+Diversion Ratio Euc R126           1.56273  1.89715  1.07915  1.1121
+Convex Hull Area R126              5407.5  5407.5  525  172.5
+Convex Hull Perimeter R126         355.085  355.085  214.884  213.047
+Convex Hull Max Radius R126        103.005  100.404  53.2353  55.0818
+Convex Hull Bearing R126           90.5563  354.857  174.611  273.122
+Convex Hull Shape Index R126       1.85549  1.85549  6.99904  20.9389
+Problem route weight R126          0  0  0  0
+Problem route excess R126          0  0  0  0
 
 
 destroying

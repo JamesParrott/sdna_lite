@@ -1,19 +1,3 @@
-//sDNA software for spatial network analysis 
-//Copyright (C) 2011-2019 Cardiff University
-
-//This program is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//(at your option) any later version.
-
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
-//You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 // stdafx.h : include file for standard system include files,
 // or project specific include files that are used frequently, but
 // are changed infrequently
@@ -21,6 +5,9 @@
 
 #pragma once
 
+#include "targetver.h"
+
+#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 
 #define _SCL_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
@@ -29,15 +16,14 @@
 #define _SECURE_SCL 0 //disable iterator bounds checking for release builds
 #endif
 
-// #ifndef __cplusplus
-// # include <stddef.h> /* for size_t definition */
-// #else
-# include <cstddef>
-// using std::size_t;
-// #endif
+// Windows Header Files:
+#define NOMINMAX
+#include <windows.h>
+#include <wininet.h>
+#include <stdlib.h>
 
 #include <vector>
-#include "IteratorTypeErasure/any_iterator/any_iterator.hpp"
+#include "IteratorTypeErasure\any_iterator\any_iterator.hpp"
 #include <iostream>
 #include <limits>
 #include <set>
@@ -88,7 +74,7 @@ using boost::numeric_cast;
 #define UNICODE_SAVE _UNICODE
 #undef _UNICODE
 #define MUP_BASETYPE float
-#include "../muparser/drop/include/muParser.h"
+#include "muparser.h"
 #define _UNICODE UNICODE_SAVE
 
 using boost::geometry::model::d2::point_xy;
@@ -105,6 +91,9 @@ typedef boost::geometry::model::linestring<point_xyz > BoostLineString3d;
 #define OMP_NUM_THREADS 1
 #endif
 
+#ifdef _MSC_VER // msvc compiler
+#include <omp.h>
+#endif
 
 // The following ifdef block is the standard way of creating macros which make exporting 
 // from a DLL simpler. All files within this DLL are compiled with the SDNA_EXPORTS

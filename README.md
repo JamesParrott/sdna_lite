@@ -1,24 +1,8 @@
-# sDNA_lite: A light(er) fork of sdna_open, Spatial Design Network Analysis
+# sDNA+: Spatial Design Network Analysis plus
 
-Status: pre-alpha.  Not functional, incomplete.  Mightily hacked.  Untested.
+This is the open source fork of the formerly proprietary sDNA+ software - all the sDNA features plus hybrid metrics. 
 
-Crazy 45MB .so:  https://github.com/JamesParrott/sdna_lite/releases/download/v0.0.0-untested-pre-pre-pre-alpha-arm-ubuntu-jammy/lib_sDNA_ubuntu.so
-
-
-## Current progress:
- - Compiles Geos in Ubuntu 22.04, on aarch64 (ARM)
- - Compiles lib_sDNA_ubuntu.so in a Docker container, for ARM, using gcc.
-
-## Changes:
- - No autocad dir
- - No logo dir
- - No R
-
-# Original readme:
-
-This is the open source fork of the formerly proprietary sDNA software created by Crispin Cooper on behalf of [Cardiff University](https://www.cardiff.ac.uk).  Alain Chiaradia was responsible for the initial idea, and Chris Webster for the initial funding and project mentoring. 
-
-We are grateful to various parties for financial contributions towards  development: in no particular order, Hong Kong University, Tongji University, the UK Economic and Social Research Council, BRE, Wedderburn Transport Planning. Also research contributions in kind from Arup Ltd, WSP Global Engineering, BuroHappold and Sustrans. 
+sDNA+ was created by Crispin Cooper on behalf of [Cardiff University](https://www.cardiff.ac.uk).  Alain Chiaradia was responsible for the initial idea, and Chris Webster for the initial funding and project mentoring. We are grateful to various parties for financial contributions towards  development: in no particular order, Hong Kong University, Tongji University, the UK Economic and Social Research Council, BRE, Wedderburn Transport Planning. Also research contributions in kind from Arup Ltd, WSP Global Engineering, BuroHappold and Sustrans. 
 
 If you are interested in sponsoring changes to sDNA, please get in touch with Crispin cooperch@cardiff.ac.uk.
 
@@ -28,11 +12,12 @@ Copyright rests with Cardiff University and the code is released under GPL versi
 
 ### Installation
 
-Downloads of the windows installer are available [here](https://github.com/fiftysevendegreesofrad/sdna_open/releases).
+Builds under VS 2015 not available:
 
-The original sDNA project website will also continue to host releases both for the closed-source-but-free-as-in-beer sDNA, and  the commercial sDNA+. Depending on your needs, you may therefore prefer to install the  [proprietary build](https://www.cardiff.ac.uk/sdna/software/download/). Depending on how this fork develops, it is possible that future builds will offer different features.
 
-If you wish to be kept apace of new sDNA developments, you might prefer the closed-source-but-free-as-in-beer version, as installing and unlocking this will add you to our mailing list. (At some point we will create a separate mailing list signup!)
+
+In the interim you can download the old sDNA software from the [sDNA website](https://sdna.cardiff.ac.uk/sdna/). This requires a free serial number, also available on the website. Note that free serial numbers now unlock ALL features including the previously proprietary sDNA+ features.
+
 
 ### Use
 
@@ -49,7 +34,7 @@ Use the software via any of the following means:
 
 ### Documentation
 
-An automated build of the documentation can be found on [readthedocs](https://sdna-open.readthedocs.io/en/latest/index.html). 
+At the present time the best source of documentation is the manual hosted on the [sDNA/sDNA+ website](https://www.cardiff.ac.uk/sdna). If you build the project yourself, a copy of the docs will also be built from source in the repository.
 
 ### Support
 
@@ -61,18 +46,39 @@ If filing a bug, please file to the database here on github.
 
 ### Building the software
 
+#### Buidling James' fork on github.  
+ - Fork the repo
+ - Click the actions tab in your fork
+ - Clcik the compile action on the left
+ - Click run action (selecting the chosen branch - main is tested) on the right
+ - The action attempts to cache geos and boost.
+
+#### Building James' fork locally
+
+ - Install (the) Visual Studio 2022 (installer).  Community edition is fine.
+ - In the VS 2022 installer, ensure there is a desktop C++ development, with vcpkg and both the Windows 11 and Windows 10 sdks.
+ - Clone the repo locally.
+ - Run vcpkg integrate install (in the repo root dir?), to let VS 2022 both launch vcpkg, and put the locations vcpkg installs the deps in vcpkg.json on to the include paths.  vcpkg might install boost twice, but shouldn't have to download it again thereafter.
+ - Open /sDNA/sdna_vs2008/sdna_vs2008.vcxproj
+ - Click build.
+
+
+
+
 Build requirements:
 
-* Microsoft Visual C++ professional 2008
-* Python 2.7
-* Sphinx
-* Advanced Installer
-* Boost C++ libraries version 1.55
-* Autocad (only if wanting to modify the Autocad interface)
+* [Microsoft Visual C++ professional 2015](https://my.visualstudio.com/Downloads?q=%22Visual%20Studio%20Professional%202015%22)  
+* Boost C++ libraries [version 1.83 (MSVC 14.0)](https://sourceforge.net/projects/boost/files/boost-binaries/1.83.0/boost_1_83_0-msvc-14.0-64.exe/download)
 
-First build the geos library using `sDNA\geos\build.bat`. After that, `build_release.bat` in project root does what it says on the tin.
+First download [geos 3.11.2](https://download.osgeo.org/osgeo4w/v2/x86_64/release/geos/geos-3.11.2-1.tar.bz2) ([source code](https://download.osgeo.org/geos/geos-3.11.2.tar.bz2) ).  
 
-The Autocad components are not rebuilt automatically. If editing the Lisp files, you will need to use the Autocad Lisp editor to rebuild the `sdna.prv` Lisp project.
+Run .\build_release.bat
+
+Extract or open the geos archive, copy geos_c.dll, and (as professionally as possible) paste it  in `\output\release\x64` (next to `sdna_vs2008.dll`)
+
+Cd into the `\bin` folder and run the python entry scripts to run.
+
+To package for release: add everything in `\output\release` to a .zip archive.
 
 ### Project Structure
 

@@ -1,19 +1,3 @@
-//sDNA software for spatial network analysis 
-//Copyright (C) 2011-2019 Cardiff University
-
-//This program is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//(at your option) any later version.
-
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
-//You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 #include "stdafx.h"
 #include "sdna_spatial_accumulators.h"
 #include "linkdatasource.h"
@@ -120,7 +104,7 @@ class sDNAGeometryPointsByEdgeLength : public sDNAGeometry
 		pos_t pos;
 		EdgeLengthPos(Edge* e, float l, pos_t p) : edge(e),length(l),pos(p) {}
 	};
-	vector<const EdgeLengthPos> parts;
+	vector<EdgeLengthPos> parts;
 public:
 	void add_edge_length_from_start_to_end(Edge* e, float length)
 	{
@@ -136,7 +120,7 @@ public:
 	}
 	void append_points_to(BoostLineString3d &result)
 	{
-		for (vector<const EdgeLengthPos>::iterator it=parts.begin(); it!=parts.end(); ++it)
+		for (vector<EdgeLengthPos>::iterator it=parts.begin(); it!=parts.end(); ++it)
 		{
 			switch(it->pos)
 			{
@@ -172,7 +156,7 @@ class sDNADataMultiGeometry
 {
 private:
 	sDNAGeom_t type;
-	vector<shared_ptr<sDNAGeometry> > items;
+	vector<boost::shared_ptr<sDNAGeometry> > items;
 	vector<SDNAVariant> data;
 public:
 	sDNADataMultiGeometry(sDNAGeom_t type, vector<SDNAVariant> data, size_t reserve) 
@@ -180,7 +164,7 @@ public:
 	{
 		items.reserve(reserve);
 	}
-	void add_part(shared_ptr<sDNAGeometry> g) 
+	void add_part(boost::shared_ptr<sDNAGeometry> g) 
 	{ 
 		assert(items.size()==0 || type==MULTIPOLYLINEZ);
 		assert(type!=NO_GEOM);
@@ -212,7 +196,7 @@ public:
 class sDNAGeometryCollection;
 class sDNAGeometryCollectionIterator : public sDNAGeometryCollectionIteratorBase
 {
-	vector<shared_ptr<sDNADataMultiGeometry> >::iterator it, it_for_getpart;
+	vector<boost::shared_ptr<sDNADataMultiGeometry> >::iterator it, it_for_getpart;
 	sDNAGeometryCollection *gc;
 	vector<double> xs_buffer, ys_buffer;
 	vector<float> zs_buffer;
@@ -303,7 +287,7 @@ public:
 	{
 		items.reserve(n); 
 	}
-	void add(shared_ptr<sDNADataMultiGeometry> g)
+	void add(boost::shared_ptr<sDNADataMultiGeometry> g)
 	{
 		assert(is_initialized());
 		assert(g->get_type()==type);
@@ -317,7 +301,7 @@ private:
 	string name;
 	sDNAGeom_t type;
 	string type_s;
-	ThreadSafeVector<shared_ptr<sDNADataMultiGeometry> > items;
+	ThreadSafeVector<boost::shared_ptr<sDNADataMultiGeometry> > items;
 	OutputStringArray m_datanames, m_shortdatanames, m_pythontypes;
 	
 	bool is_initialized() {return !name.empty();}

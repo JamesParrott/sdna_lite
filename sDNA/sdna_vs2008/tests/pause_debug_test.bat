@@ -13,6 +13,8 @@ cmd /C run_debug_test.bat
 rem Python 3 test only for the following:
 %pythonexe% -u debug_test.py >testout_%outputsuffix%.txt 2>&1
 cmd /C colourdiff correctout.txt testout_%outputsuffix%.txt 
+%pythonexe% -u hybrid_test.py >hybrid_testout.txt 2>&1
+cmd /C colourdiff hybrid_correctout.txt hybrid_testout.txt 
 %pythonexe% -u 3d_test.py >testout3d_%outputsuffix%.txt 2>&1
 cmd /C colourdiff correctout3d.txt testout3d_%outputsuffix%.txt 
 %pythonexe% -u partial_test.py >testout_partial_%outputsuffix%.txt 2>&1

@@ -18,12 +18,13 @@ cmd /C mydiff correctout_learn.txt testout_learn_%outputsuffix%_fordiff.txt
 echo running table tests on %sdnadll%
 del testout_table_%outputsuffix%.txt
 del tabletestout_%outputsuffix%.*
-%pythonexe% -u ..\..\..\arcscripts\bin\sdnaintegral.py --dll %sdnadll% --im "net=zonetest;tables=zonetesttable.csv,zonetesttable2.csv" --om "net=tabletestout_%outputsuffix%.shp" "linkonly;zonesums=lulinks=landuse*FULLlf@origzone,eucsum=euc@destzone;origweightformula=zoneweight*one*dztest*landuse*FULLlf/lulinks;destweightformula=eucsum;" >testout_table_%outputsuffix%.txt 
+%pythonexe% -u ..\..\..\arcscripts\bin\sdnaintegral.py --dll %sdnadll% --im "net=zonetest;tables=zonetesttable.csv,zonetesttable2.csv" --om "net=tabletestout_%outputsuffix%.shp" "linkonly;zonesums=lulinks=landuse*FULLlf@origzone,eucsum=euc@destzone;origweightformula=zoneweight*one*dztest*landuse*FULLlf/lulinks;destweightformula=eucsum;metric=HYBRID;lineformula=fwd?lulinks:eucsum*landuse;ignorenonlinear" >testout_table_%outputsuffix%.txt 
 %pythonexe% ..\..\..\arcscripts\shp2txt.py tabletestout_%outputsuffix% >>testout_table_%outputsuffix%.txt 
 echo "duplicate zone table/sum test" >>testout_table_%outputsuffix%.txt
 %pythonexe% -u ..\..\..\arcscripts\bin\sdnaintegral.py --dll %sdnadll% --im "net=zonetest;tables=zonetesttable.csv" --om "net=tabletestout1_%outputsuffix%.shp" "linkonly;zonesums=one=1@destzone" >>testout_table_%outputsuffix%.txt 
 echo "duplicate zone and net data test" >>testout_table_%outputsuffix%.txt
 %pythonexe% -u ..\..\..\arcscripts\bin\sdnaintegral.py --dll %sdnadll% --im "net=zonetest;tables=zonetesttableduplicate.csv" --om "net=tabletestout2_%outputsuffix%.shp" "linkonly" >>testout_table_%outputsuffix%.txt 
+
 @echo on
 cmd /C mydiff correctout_table.txt testout_table_%outputsuffix%.txt
 echo

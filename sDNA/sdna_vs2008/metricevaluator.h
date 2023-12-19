@@ -1,19 +1,3 @@
-//sDNA software for spatial network analysis 
-//Copyright (C) 2011-2019 Cardiff University
-
-//This program is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//(at your option) any later version.
-
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
-//You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 #include "stdafx.h"
 #include "point.h"
 #include "dataacquisitionstrategy.h"
@@ -45,9 +29,9 @@ class DataExpectedByExpression //data that an expression expects to appear
 	SDNAIntegralCalculation *calculation;
 	string name;
 
-	shared_ptr<Table<float>> zonedatatable;
-	shared_ptr<Table<long double>> zonesumtable;
-	shared_ptr<NetExpectedDataSource<float>> netdata;
+	boost::shared_ptr<Table<float>> zonedatatable;
+	boost::shared_ptr<Table<long double>> zonesumtable;
+	boost::shared_ptr<NetExpectedDataSource<float>> netdata;
 public:
 
 	DataExpectedByExpression(string name,Net *net,SDNAIntegralCalculation *calculation);
@@ -168,13 +152,13 @@ struct JuncVariableSource
 struct LinkVariableSource
 {
 	//fixme this is very similar to DataExpectedByExpression - perhaps a needless layer of abstraction
-	shared_ptr<DataExpectedByExpression> debe;
+	boost::shared_ptr<DataExpectedByExpression> debe;
 	bool is_temp;
 	bool initialized; //NB this is only false if called with 1st constructor 
 	string varname;
 	LinkVariableSource() : initialized(false) {}
 	LinkVariableSource(string vn) : initialized(true), is_temp(true), varname(vn) {}
-	LinkVariableSource(string vn,shared_ptr<DataExpectedByExpression> debe) : initialized(true), is_temp(false), debe(debe), varname(vn) {}
+	LinkVariableSource(string vn,boost::shared_ptr<DataExpectedByExpression> debe) : initialized(true), is_temp(false), debe(debe), varname(vn) {}
 	float get_link_data(const Edge * const e);
 	string getvarname()
 	{

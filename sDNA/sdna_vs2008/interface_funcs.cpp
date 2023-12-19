@@ -1,19 +1,3 @@
-//sDNA software for spatial network analysis 
-//Copyright (C) 2011-2019 Cardiff University
-
-//This program is free software: you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation, either version 3 of the License, or
-//(at your option) any later version.
-
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-
-//You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 #include "stdafx.h"
 #include "net.h"
 #include "calculation.h"
@@ -128,6 +112,7 @@ SDNA_API char** __stdcall icalc_get_short_output_names(SDNAIntegralCalculation *
 SDNA_API void __stdcall icalc_get_all_outputs(SDNAIntegralCalculation *c,float* buffer,long arcid) {return c->get_all_outputs_c(buffer,arcid);}
 
 SDNA_API void __stdcall calc_destroy(Calculation *c) { delete c; }
+
 
 SDNA_API long __stdcall net_get_num_items(Net *n)
 {
@@ -264,7 +249,7 @@ SDNA_API void __stdcall geom_iterator_destroy(sDNAGeometryCollectionIteratorBase
 SDNA_API Calculation* __stdcall calc_create(char *name, char *config, Net *net,
 									  int (__cdecl *set_progressor_callback)(float),
 									  int (__cdecl *print_warning_callback)(const char*),
-									  vector<shared_ptr<Table<float>>>* tables1d)
+									  vector<boost::shared_ptr<Table<float>>>* tables1d)
 {
 	try
 	{
@@ -287,9 +272,9 @@ SDNA_API Table2d* __stdcall table2d_create(char *name,char *origzonefieldname,ch
 SDNA_API int __stdcall table_addrow(Table<float> *t,char *zone,float data) { return t->addrow(zone,data);}
 SDNA_API int __stdcall table2d_addrow(Table2d *t,char *fromzone,char *tozone,float data) { return t->addrow(fromzone,tozone,data);}
 
-SDNA_API vector<shared_ptr<Table<float>>>* __stdcall table_collection_create() { return new vector<shared_ptr<Table<float>>>(); }
-SDNA_API int __stdcall table_collection_add_table(vector<shared_ptr<Table<float>>>* collection,Table<float>* table)
+SDNA_API vector<boost::shared_ptr<Table<float>>>* __stdcall table_collection_create() { return new vector<boost::shared_ptr<Table<float>>>(); }
+SDNA_API int __stdcall table_collection_add_table(vector<boost::shared_ptr<Table<float>>>* collection,Table<float>* table)
 {
-	collection->push_back(shared_ptr<Table<float>>(table));
+	collection->push_back(boost::shared_ptr<Table<float>>(table));
 	return 0;
 }
