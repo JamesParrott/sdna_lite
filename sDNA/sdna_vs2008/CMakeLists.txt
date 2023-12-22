@@ -2,7 +2,36 @@ cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
 
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  CACHE STRING "Vcpkg toolchain file")
+
 project(sdna_vs2008 CXX)
+
+
+find_package(boost-algorithm CONFIG REQUIRED)
+find_package(boost-bimap CONFIG REQUIRED)
+find_package(boost-chrono CONFIG REQUIRED)
+find_package(boost-date-time CONFIG REQUIRED)
+find_package(boost-foreach CONFIG REQUIRED)
+find_package(boost-geometry CONFIG REQUIRED)
+find_package(boost-iterator CONFIG REQUIRED)
+find_package(boost-lexical-cast CONFIG REQUIRED)
+find_package(boost-math CONFIG REQUIRED)
+find_package(boost-mpl CONFIG REQUIRED)
+find_package(boost-numeric-conversion CONFIG REQUIRED)
+find_package(boost-pool CONFIG REQUIRED)
+find_package(boost-random CONFIG REQUIRED)
+find_package(boost-smart-ptr CONFIG REQUIRED)
+find_package(boost-static-assert CONFIG REQUIRED)
+find_package(boost-system CONFIG REQUIRED)
+find_package(boost-thread CONFIG REQUIRED)
+find_package(boost-type-traits CONFIG REQUIRED)
+find_package(boost-utility CONFIG REQUIRED)
+find_package(boost-variant CONFIG REQUIRED)
+
+
+
+
 
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
@@ -207,6 +236,9 @@ set(ALL_FILES
 # Target
 ################################################################################
 add_library(${PROJECT_NAME} SHARED ${ALL_FILES})
+
+
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
 
 target_precompile_headers(${PROJECT_NAME} PRIVATE
     "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/stdafx.h>"
