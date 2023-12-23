@@ -1,0 +1,1 @@
+#include "../../../sdna_vs2008/stdafx.h"
