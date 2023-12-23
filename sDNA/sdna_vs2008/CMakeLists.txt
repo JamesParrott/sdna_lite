@@ -133,13 +133,15 @@ set(Headers
 )
 source_group("Headers" FILES ${Headers})
 
+# set(Sources
+#     "../muparser/drop/src/muParser.cpp"
+#     "../muparser/drop/src/muParserBase.cpp"
+#     "../muparser/drop/src/muParserBytecode.cpp"
+#     "../muparser/drop/src/muParserCallback.cpp"
+#     "../muparser/drop/src/muParserError.cpp"
+#     "../muparser/drop/src/muParserTokenReader.cpp"
+    
 set(Sources
-    "../muparser/drop/src/muParser.cpp"
-    "../muparser/drop/src/muParserBase.cpp"
-    "../muparser/drop/src/muParserBytecode.cpp"
-    "../muparser/drop/src/muParserCallback.cpp"
-    "../muparser/drop/src/muParserError.cpp"
-    "../muparser/drop/src/muParserTokenReader.cpp"
     "calc_output_code.cpp"
     "calculation.cpp"
     "dijkstra.cpp"
@@ -194,9 +196,12 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     INTERPROCEDURAL_OPTIMIZATION_RELEASE              "TRUE"
 )
 
+# target_include_directories(${PROJECT_NAME} PUBLIC
+#     "C:/msys64/mingw64/include/"
+#     "${CMAKE_CURRENT_SOURCE_DIR}/../muparser/drop/include"
+# )
 target_include_directories(${PROJECT_NAME} PUBLIC
     "C:/msys64/mingw64/include/"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../muparser/drop/include"
 )
 # target_include_directories(${PROJECT_NAME} PUBLIC
 #     "C:/msys64/mingw64/include/"
