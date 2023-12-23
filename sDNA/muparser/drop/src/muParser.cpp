@@ -23,7 +23,12 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
+
+#ifdef _MSC_VER
 #include "stdafx.h"
+#else
+#include "../../../sdna_vs2008/stdafx.h"
+#endif
 #include "muParser.h"
 #include "muParserTemplateMagic.h"
 
