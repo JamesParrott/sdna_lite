@@ -2,8 +2,15 @@ cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
 
-set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake"
-  CACHE STRING "Vcpkg toolchain file")
+set(VCPKG_TARGET_TRIPLET "x64-mingw-static")
+
+set(VCPKG_HOST_TRIPLET "x64-mingw-static")
+
+
+set(CMAKE_TOOLCHAIN_FILE "C:/msys64/home/drjam/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    CACHE STRING "Vcpkg toolchain file")
+
+
 
 project(sdna_vs2008 CXX)
 
